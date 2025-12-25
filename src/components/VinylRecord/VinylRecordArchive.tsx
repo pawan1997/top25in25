@@ -1,3 +1,21 @@
+/**
+ * ARCHIVED: Original Vinyl Record Design
+ *
+ * This was the initial design featuring glass morphism cards with Figma-inspired
+ * gradient borders. The design included:
+ * - 180px max-width square cards
+ * - Gradient border (28% white top → 0% bottom)
+ * - Glass background gradient (white 0-15%, black 30% bottom)
+ * - User photo with 12px padding
+ * - Hover animations (elevation + scale)
+ * - Full-screen editorial modal
+ *
+ * Preserved for potential future use or reference.
+ *
+ * Date Archived: December 24, 2025
+ * Replaced By: GridCard.tsx (grid-based design with dynamic hover effects)
+ */
+
 import { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import gsap from 'gsap';
@@ -9,7 +27,7 @@ interface VinylRecordProps {
   index: number;
 }
 
-export default function VinylRecord({ user, index }: VinylRecordProps) {
+export default function VinylRecordArchive({ user, index }: VinylRecordProps) {
   const { category } = useParams<{ category: string }>();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);

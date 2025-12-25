@@ -27,14 +27,13 @@ export default function AlbumCover({ user }: AlbumCoverProps) {
         </p>
 
         {/* Metric Display */}
-        <div className="flex items-center gap-2 mb-6">
-          <span className="text-2xl font-semibold text-blue-600">
-            {typeof user.metricValue === 'number' && user.metricValue > 100
-              ? user.metricValue.toLocaleString()
-              : user.metricValue}
-          </span>
-          <span className="text-gray-600">{user.subtitle}</span>
-        </div>
+        {user.categoryMetric && (
+          <div className="flex items-center gap-2 mb-6">
+            <span className="text-2xl font-semibold text-blue-600">
+              {user.categoryMetric}
+            </span>
+          </div>
+        )}
 
         {/* CTA Button */}
         <a

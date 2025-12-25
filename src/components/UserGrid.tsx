@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import gsap from 'gsap';
 import { usersByCategory } from '../data/users';
 import { CATEGORIES } from '../constants/categories';
-import VinylRecord from './VinylRecord/VinylRecord';
+import GridCard from './GridCard/GridCard';
+import CategoryShowcase from './CategoryShowcase';
 
 export default function UserGrid() {
   const { category } = useParams<{ category: string }>();
   const users = category ? usersByCategory[category] || [] : [];
   const currentCategory = CATEGORIES.find(cat => cat.slug === category);
-  const currentIndex = CATEGORIES.findIndex(cat => cat.slug === category);
   const gridRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -49,30 +49,21 @@ export default function UserGrid() {
   }, [category]);
 
   return (
-    <div className="w-full min-h-screen pt-24 pb-16">
+    <div className="w-full min-h-screen">
       {/* Editorial Hero Section */}
-      <div ref={heroRef} className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 mb-16 md:mb-20">
-        {/* Top line with category index */}
-        <div className="animate-hero flex items-center gap-4 mb-6">
-          <div className="h-px flex-1 max-w-[60px] bg-white/10" />
-          <span className="text-[11px] tracking-[0.3em] uppercase text-white/30">
-            Category {String(currentIndex + 1).padStart(2, '0')} of {String(CATEGORIES.length).padStart(2, '0')}
-          </span>
-        </div>
-
+      <div ref={heroRef} className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 mb-8 md:mb-16 pt-4 md:pt-0">
         {/* Main Title */}
-        <h1 className="animate-hero font-editorial text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-6">
+        <h1 className="animate-hero font-editorial text-4xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-4 md:mb-6">
           {currentCategory?.title || 'Top 25'}
         </h1>
 
-        {/* Subtitle */}
-        <p className="animate-hero text-white/40 text-base md:text-lg max-w-xl leading-relaxed">
-          Celebrating the most exceptional creators on Topmate in 2025.
-          These rankings highlight outstanding achievement across our platform.
+        {/* Subtitle - Category specific */}
+        <p className="animate-hero text-white/40 text-sm md:text-lg max-w-xl leading-relaxed">
+          {currentCategory?.description || 'Celebrating the most exceptional creators on Topmate in 2025.'}
         </p>
 
         {/* Decorative line */}
-        <div className="animate-hero mt-10 h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
+        <div className="animate-hero mt-6 md:mt-10 h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
       </div>
 
       {/* Grid Section */}
@@ -90,24 +81,16 @@ export default function UserGrid() {
         {/* User Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
         >
           {users.map((user, index) => (
-            <VinylRecord key={user.id} user={user} index={index} />
+            <GridCard key={user.id} user={user} index={index} />
           ))}
         </div>
       </div>
 
-      {/* Bottom section with navigation hint */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 mt-20">
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-px flex-1 max-w-[100px] bg-white/5" />
-          <span className="text-[10px] tracking-[0.3em] uppercase text-white/20">
-            Click to view profile
-          </span>
-          <div className="h-px flex-1 max-w-[100px] bg-white/5" />
-        </div>
-      </div>
+      {/* Category Showcase */}
+      <CategoryShowcase />
     </div>
   );
 }

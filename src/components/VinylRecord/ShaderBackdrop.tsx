@@ -3,7 +3,7 @@ interface ShaderBackdropProps {
   size?: number;
 }
 
-export default function ShaderBackdrop({ userId }: ShaderBackdropProps) {
+export default function ShaderBackdrop({ userId: _userId }: ShaderBackdropProps) {
   return (
     <div className="gradient-bg absolute inset-0 rounded-full overflow-hidden">
       {/* Solid dark background */}

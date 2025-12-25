@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@200;300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 :root {
   --color-cream: #f5f0e8;
   --color-charcoal: #1a1a1a;
-  --color-ink: #0d0d0d;
+  --color-ink: #000000;
   --color-gold: #c9a959;
   --color-muted: rgba(255, 255, 255, 0.4);
 }
@@ -34,6 +34,10 @@ body {
 
 .font-sans {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-space {
+  font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* Subtle grain texture overlay */
@@ -196,4 +200,12 @@ a:focus-visible {
 ::selection {
   background: var(--color-gold);
   color: var(--color-ink);
+}
+
+/* Dotted Grid Background - Stripe/SaaS style */
+.bg-dotted-grid {
+  background-color: #000000;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
 }

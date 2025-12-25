@@ -1,210 +1,230 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
-import { CATEGORIES } from '../constants/categories';
+import { CATEGORIES, getCategoriesByGroup } from '../constants/categories';
+import { usersByCategory } from '../data/users';
+import { CATEGORY_GROUPS, type CategoryGroup } from '../types';
 
 export default function TopNav() {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuContainerRef = useRef<HTMLDivElement>(null);
-  const backdropRef = useRef<HTMLDivElement>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('platform');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const categoryItemsRef = useRef<HTMLAnchorElement[]>([]);
 
   // Get current category for display
   const currentCategory = CATEGORIES.find(cat => cat.route === currentPath);
+  const isHomepage = currentPath === '/';
 
-  // Animate menu items on open
+  // Animate dropdown on open
   useEffect(() => {
-    if (!isMenuOpen || !menuContainerRef.current) return;
+    if (!isDropdownOpen || !dropdownRef.current) return;
 
-    const items = menuContainerRef.current.querySelectorAll('.menu-grid-item');
-    if (items.length === 0) return;
-
-    gsap.fromTo(items,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.04,
-        ease: "power3.out",
-        delay: 0.2
-      }
+    // Dropdown appearance
+    gsap.fromTo(dropdownRef.current,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
     );
-  }, [isMenuOpen]);
 
-  // Animate backdrop on open
-  useEffect(() => {
-    if (!backdropRef.current) return;
-
-    if (isMenuOpen) {
-      gsap.to(backdropRef.current, {
+    // Category items stagger
+    gsap.fromTo(categoryItemsRef.current,
+      { x: -20, opacity: 0 },
+      {
+        x: 0,
         opacity: 1,
         duration: 0.4,
-        ease: "power2.out"
-      });
-    }
-  }, [isMenuOpen]);
+        stagger: 0.03,
+        ease: "power2.out",
+        delay: 0.1
+      }
+    );
+  }, [isDropdownOpen]);
 
-  const handleClose = () => {
-    if (!backdropRef.current) return;
+  // Click outside to close dropdown
+  useEffect(() => {
+    if (!isDropdownOpen) return;
 
-    gsap.to(backdropRef.current, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => setIsMenuOpen(false)
-    });
-  };
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      const isOutsideDropdown = dropdownRef.current && !dropdownRef.current.contains(target);
+      const isOutsideButton = buttonRef.current && !buttonRef.current.contains(target);
+
+      if (isOutsideDropdown && isOutsideButton) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isDropdownOpen]);
+
+  // Close on ESC key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isDropdownOpen) {
+        setIsDropdownOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isDropdownOpen]);
+
+  // Mobile scroll behavior - hide logo on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
       {/* Minimal Editorial Nav */}
-      <nav className="fixed top-0 left-0 right-0 h-20 z-50">
+      <nav className="fixed top-0 left-0 right-0 z-50">
         {/* Subtle gradient backdrop */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none" />
 
-        <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 h-full flex items-center justify-between">
-          {/* Logo - Left */}
-          <Link to="/earning" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#c9a959] flex items-center justify-center">
-              <span className="font-editorial text-lg font-bold text-black">25</span>
+        <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+          {/* Mobile: Full logo on top (hides on scroll) - only on category pages */}
+          {currentCategory && (
+            <div className={`
+              md:hidden flex justify-center py-3 transition-all duration-300
+              ${isScrolled ? 'opacity-0 h-0 py-0 overflow-hidden' : 'opacity-100'}
+            `}>
+              <Link to="/">
+                <img
+                  src="/top25logo.svg"
+                  alt="Top 25 in '25"
+                  className="h-10"
+                />
+              </Link>
             </div>
-            <span className="hidden sm:block text-white/60 text-sm tracking-wide group-hover:text-white transition-colors">
-              Top 25 in '25
-            </span>
-          </Link>
+          )}
 
-          {/* Current Category - Center (Desktop) */}
-          <div className="hidden md:flex items-center gap-4">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-white/30">
-              Viewing
-            </span>
-            <span className="font-editorial text-lg text-white">
-              {currentCategory?.title || 'All Categories'}
-            </span>
-          </div>
+          {/* Desktop & Mobile (sticky) category selector */}
+          <div className={`
+            flex items-center justify-between transition-all duration-300
+            ${isScrolled ? 'py-4' : 'py-6'}
+          `}>
+            {/* Logo - Desktop only */}
+            <Link to="/" className="hidden md:flex items-center gap-3 group">
+              <img
+                src="/top25logo.svg"
+                alt="Top 25 in '25"
+                className="h-10 md:h-12"
+              />
+            </Link>
 
-          {/* Menu Button - Right */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group"
-          >
-            <span className="hidden sm:block text-sm tracking-wide">
-              Categories
-            </span>
-            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
-              <div className="flex flex-col gap-1">
-                <span className="block w-4 h-px bg-current" />
-                <span className="block w-4 h-px bg-current" />
-              </div>
-            </div>
-          </button>
-        </div>
-      </nav>
-
-      {/* Full-Screen Editorial Menu */}
-      {isMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            ref={backdropRef}
-            className="fixed inset-0 bg-[#0d0d0d] z-50"
-            style={{ opacity: 0 }}
-          />
-
-          {/* Menu Content */}
-          <div
-            ref={menuContainerRef}
-            className="fixed inset-0 z-50 overflow-y-auto"
-          >
-            {/* Header with close button */}
-            <div className="sticky top-0 w-full px-6 md:px-12 lg:px-16 py-6 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#c9a959] flex items-center justify-center">
-                  <span className="font-editorial text-lg font-bold text-black">25</span>
-                </div>
-              </div>
-
+            {/* Category Dropdown - Aesthetic Box - Right aligned on Desktop */}
+            <div className={isHomepage ? '' : 'flex-1 md:flex-initial'}>
               <button
-                onClick={handleClose}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-white/40 transition-colors group"
+                ref={buttonRef}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center justify-between gap-3 px-5 py-3 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-200 w-full md:w-auto group"
               >
-                <svg className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                <span className="font-editorial text-sm md:text-base text-white">
+                  {isHomepage ? 'Select a Category' : (currentCategory?.title || 'Select Category')}
+                </span>
+                <svg
+                  className={`w-4 h-4 text-white/60 group-hover:text-white transition-all ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
             </div>
+          </div>
 
-            {/* Menu Grid */}
-            <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 py-8 md:py-16">
-              {/* Section Title */}
-              <div className="mb-12 menu-grid-item">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-white/30 block mb-2">
-                  Select Category
-                </span>
-                <h2 className="font-editorial text-4xl md:text-5xl text-white">
-                  Browse Rankings
-                </h2>
-              </div>
-
-              {/* Categories Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {CATEGORIES.map((category, index) => {
-                  const isActive = currentPath === category.route;
-                  return (
-                    <Link
-                      key={category.slug}
-                      to={category.route}
-                      onClick={handleClose}
-                      className="menu-grid-item block group"
-                    >
-                      <div className={`
-                        relative p-6 md:p-8 rounded-2xl transition-all duration-300 h-full min-h-[120px] md:min-h-[140px]
-                        flex flex-col justify-between
-                        ${isActive
+          {/* Dropdown Menu - Outside the flex container for full width */}
+          {isDropdownOpen && (
+            <div
+              ref={dropdownRef}
+              className="fixed left-4 right-4 top-28 md:relative md:top-0 md:left-0 md:right-0 md:mt-2"
+              style={{ opacity: 0 }}
+            >
+              <div className="border-2 border-white/20 rounded-xl overflow-hidden bg-black/95 backdrop-blur-xl shadow-2xl p-3 md:p-6">
+                {/* Filter Chips */}
+                <div className="flex gap-2 mb-4">
+                  {(Object.keys(CATEGORY_GROUPS) as CategoryGroup[]).map((group) => (
+                    <button
+                      key={group}
+                      onClick={() => setActiveGroup(group)}
+                      className={`px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-200 ${
+                        activeGroup === group
                           ? 'bg-[#c9a959] text-black'
-                          : 'bg-white/[0.02] text-white hover:bg-white/[0.05]'
-                        }
-                        border ${isActive ? 'border-[#c9a959]' : 'border-white/5 hover:border-white/10'}
-                      `}>
-                        {/* Index number */}
-                        <div className={`text-[11px] tracking-[0.2em] ${isActive ? 'text-black/50' : 'text-white/30'}`}>
-                          {String(index + 1).padStart(2, '0')}
+                          : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/10'
+                      }`}
+                    >
+                      {CATEGORY_GROUPS[group].label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                  {getCategoriesByGroup(activeGroup).map((category, index) => {
+                    const isActive = currentPath === category.route;
+                    const topUsers = usersByCategory[category.slug]?.slice(0, 3) || [];
+                    return (
+                      <Link
+                        key={category.slug}
+                        to={category.route}
+                        ref={(el) => {
+                          if (el) categoryItemsRef.current[index] = el;
+                        }}
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="group/card"
+                      >
+                        <div
+                          className="relative rounded-xl md:rounded-2xl p-[1px] transition-all duration-200"
+                          style={{
+                            background: isActive
+                              ? 'linear-gradient(180deg, rgba(201,169,89,0.5) 0%, rgba(201,169,89,0.2) 50%, rgba(201,169,89,0) 100%)'
+                              : 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%)'
+                          }}
+                        >
+                          <div className="bg-black/80 group-hover/card:bg-white/5 rounded-xl md:rounded-2xl p-3 md:p-5 transition-colors">
+                            {/* User Photos - Fixed size circles */}
+                            {topUsers.length > 0 && (
+                              <div className="flex -space-x-2 md:-space-x-3 mb-2 md:mb-3">
+                                {topUsers.map((user, idx) => (
+                                  <div
+                                    key={user.id}
+                                    className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden border border-black md:border-2 flex-shrink-0"
+                                    style={{ zIndex: 3 - idx }}
+                                  >
+                                    <img
+                                      src={user.imageUrl}
+                                      alt={user.name}
+                                      className="w-full h-full object-cover"
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {/* Title */}
+                            <span className={`font-space text-xs md:text-base font-medium block truncate ${isActive ? 'text-[#c9a959]' : 'text-white'}`}>
+                              {category.title}
+                            </span>
+                          </div>
                         </div>
-
-                        {/* Category title */}
-                        <div className="flex items-end justify-between gap-4">
-                          <h3 className="font-editorial text-xl md:text-2xl leading-tight">
-                            {category.title}
-                          </h3>
-
-                          {/* Arrow indicator */}
-                          <svg
-                            className={`w-5 h-5 flex-shrink-0 transform transition-all duration-300 ${isActive ? '' : 'opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'}`}
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Footer info */}
-              <div className="mt-16 pt-8 border-t border-white/5 menu-grid-item">
-                <p className="text-white/30 text-sm max-w-md">
-                  Celebrating the most exceptional creators on Topmate. Rankings based on 2025 performance data.
-                </p>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
+          )}
+        </div>
+      </nav>
     </>
   );
 }
