@@ -85,30 +85,32 @@ export default function TopNav() {
     <>
       {/* Minimal Editorial Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50">
-        {/* Subtle gradient backdrop */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none" />
+        {/* Subtle gradient backdrop - transparent on homepage to show beams */}
+        <div className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
+          isHomepage && !isScrolled
+            ? 'opacity-0'
+            : 'opacity-100 bg-gradient-to-b from-black/80 via-black/40 to-transparent'
+        }`} />
 
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-          {/* Mobile: Full logo on top (hides on scroll) - only on category pages */}
-          {currentCategory && (
-            <div className={`
-              md:hidden flex justify-center py-3 transition-all duration-300
-              ${isScrolled ? 'opacity-0 h-0 py-0 overflow-hidden' : 'opacity-100'}
-            `}>
-              <Link to="/">
-                <img
-                  src="/top25logo.svg"
-                  alt="Top 25 in '25"
-                  className="h-10"
-                />
-              </Link>
-            </div>
-          )}
+          {/* Mobile: Full logo on top (hides on scroll) - on all pages */}
+          <div className={`
+            md:hidden flex justify-center py-3 transition-all duration-300
+            ${isScrolled ? 'opacity-0 h-0 py-0 overflow-hidden' : 'opacity-100'}
+          `}>
+            <Link to="/">
+              <img
+                src="/top25logo.svg"
+                alt="Top 25 in '25"
+                className="h-10"
+              />
+            </Link>
+          </div>
 
           {/* Desktop & Mobile (sticky) category selector */}
           <div className={`
             flex items-center justify-between transition-all duration-300
-            ${isScrolled ? 'py-4' : 'py-6'}
+            ${isScrolled ? 'py-4' : (isHomepage ? 'py-4' : 'py-6')}
           `}>
             {/* Logo - Desktop only */}
             <Link to="/" className="hidden md:flex items-center gap-3 group">
@@ -145,10 +147,24 @@ export default function TopNav() {
           {isDropdownOpen && (
             <div
               ref={dropdownRef}
-              className="fixed left-4 right-4 top-28 md:relative md:top-0 md:left-0 md:right-0 md:mt-2"
+              className="fixed left-4 right-4 top-20 bottom-4 md:relative md:top-0 md:bottom-auto md:left-0 md:right-0 md:mt-2 overflow-hidden"
               style={{ opacity: 0 }}
             >
-              <div className="border-2 border-white/20 rounded-xl overflow-hidden bg-black/95 backdrop-blur-xl shadow-2xl p-3 md:p-6">
+              <div className="relative border border-white/10 rounded-xl bg-gradient-to-b from-black/95 via-black/95 to-black backdrop-blur-xl shadow-2xl p-3 md:p-6 h-full md:h-auto overflow-y-auto">
+                {/* Subtle inner glow at top */}
+                <div
+                  className="absolute inset-x-0 top-0 h-20 pointer-events-none rounded-t-xl"
+                  style={{
+                    background: 'linear-gradient(to bottom, rgba(201,169,89,0.05) 0%, transparent 100%)'
+                  }}
+                />
+                {/* Bottom fade for smooth edge */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-16 pointer-events-none rounded-b-xl z-10"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%)'
+                  }}
+                />
                 {/* Filter Chips */}
                 <div className="flex gap-2 mb-4">
                   {(Object.keys(CATEGORY_GROUPS) as CategoryGroup[]).map((group) => (
@@ -166,7 +182,7 @@ export default function TopNav() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-3" style={{ perspective: '1000px' }}>
                   {getCategoriesByGroup(activeGroup).map((category, index) => {
                     const isActive = currentPath === category.route;
                     const topUsers = usersByCategory[category.slug]?.slice(0, 3) || [];
@@ -181,39 +197,78 @@ export default function TopNav() {
                           setIsDropdownOpen(false);
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="group/card"
+                        className="group/card block"
+                        style={{ transformStyle: 'preserve-3d' }}
                       >
+                        {/* Book-pull effect wrapper */}
                         <div
-                          className="relative rounded-xl md:rounded-2xl p-[1px] transition-all duration-200"
+                          className="relative rounded-xl md:rounded-2xl p-[1px] transition-all duration-300 ease-out group-hover/card:-translate-y-2 group-hover/card:scale-[1.02]"
                           style={{
                             background: isActive
                               ? 'linear-gradient(180deg, rgba(201,169,89,0.5) 0%, rgba(201,169,89,0.2) 50%, rgba(201,169,89,0) 100%)'
-                              : 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%)'
+                              : 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%)',
+                            transformOrigin: 'center bottom'
                           }}
                         >
-                          <div className="bg-black/80 group-hover/card:bg-white/5 rounded-xl md:rounded-2xl p-3 md:p-5 transition-colors">
-                            {/* User Photos - Fixed size circles */}
-                            {topUsers.length > 0 && (
-                              <div className="flex -space-x-2 md:-space-x-3 mb-2 md:mb-3">
-                                {topUsers.map((user, idx) => (
-                                  <div
-                                    key={user.id}
-                                    className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden border border-black md:border-2 flex-shrink-0"
-                                    style={{ zIndex: 3 - idx }}
-                                  >
-                                    <img
-                                      src={user.imageUrl}
-                                      alt={user.name}
-                                      className="w-full h-full object-cover"
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                            {/* Title */}
-                            <span className={`font-space text-xs md:text-base font-medium block truncate ${isActive ? 'text-[#c9a959]' : 'text-white'}`}>
-                              {category.title}
-                            </span>
+                          {/* Hover glow - spotlight effect from above */}
+                          <div
+                            className="absolute -inset-1 rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none blur-md"
+                            style={{
+                              background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,169,89,0.25) 0%, transparent 70%)'
+                            }}
+                          />
+
+                          {/* Hover shadow - book lifting effect */}
+                          <div
+                            className="absolute inset-0 rounded-xl md:rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+                            style={{
+                              boxShadow: '0 12px 28px -8px rgba(0,0,0,0.6), 0 8px 20px -8px rgba(201,169,89,0.2), inset 0 1px 0 rgba(255,255,255,0.1)'
+                            }}
+                          />
+
+                          <div className="relative bg-black/90 group-hover/card:bg-[#0a0a0a] rounded-xl md:rounded-2xl p-3 md:p-4 transition-all duration-300 overflow-hidden">
+                            {/* Top edge light reflection */}
+                            <div
+                              className="absolute inset-x-0 top-0 h-8 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+                              style={{
+                                background: 'linear-gradient(180deg, rgba(201,169,89,0.12) 0%, transparent 100%)'
+                              }}
+                            />
+
+                            {/* Subtle top highlight line on hover */}
+                            <div
+                              className="absolute inset-x-0 top-0 h-px opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 rounded-t-xl"
+                              style={{
+                                background: 'linear-gradient(90deg, transparent 10%, rgba(201,169,89,0.5) 50%, transparent 90%)'
+                              }}
+                            />
+
+                            {/* Horizontal layout: Title left, Images right */}
+                            <div className="flex items-center justify-between gap-3">
+                              {/* Title - Left side */}
+                              <span className={`font-space text-sm md:text-base font-medium truncate max-w-[60%] transition-colors duration-300 ${isActive ? 'text-[#c9a959]' : 'text-white group-hover/card:text-white'}`}>
+                                {category.title}
+                              </span>
+
+                              {/* User Photos - Right side */}
+                              {topUsers.length > 0 && (
+                                <div className="flex -space-x-2 flex-shrink-0 transition-transform duration-300 group-hover/card:translate-x-0.5">
+                                  {topUsers.map((user, idx) => (
+                                    <div
+                                      key={user.id}
+                                      className="w-6 h-6 md:w-8 md:h-8 rounded-full overflow-hidden border border-black/50 md:border-2 flex-shrink-0 transition-all duration-300 group-hover/card:border-white/20"
+                                      style={{ zIndex: 3 - idx }}
+                                    >
+                                      <img
+                                        src={user.imageUrl}
+                                        alt={user.name}
+                                        className="w-full h-full object-cover"
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </Link>

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { usersByCategory } from '../data/users';
 import { CATEGORIES } from '../constants/categories';
+import { useSEO } from '../hooks/useSEO';
 
 export default function UserDetailPage() {
   const { category, rank } = useParams<{ category: string; rank: string }>();
@@ -12,6 +13,15 @@ export default function UserDetailPage() {
   const rankNum = parseInt(rank || '1', 10);
   const user = users.find(u => u.rank === rankNum);
   const currentCategory = CATEGORIES.find(cat => cat.slug === category);
+
+  useSEO({
+    title: user && currentCategory
+      ? `${user.name} - #${rankNum} in ${currentCategory.title} | Top 25 in '25`
+      : "Top 25 in '25 | Topmate Awards",
+    description: user
+      ? `${user.name} is ranked #${rankNum} in ${currentCategory?.title || 'Topmate'}. ${user.bio || ''}`
+      : "Celebrating the most exceptional creators on Topmate.",
+  });
 
   useEffect(() => {
     if (!contentRef.current) return;

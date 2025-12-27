@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { getCategoriesByGroup, CATEGORIES } from '../constants/categories';
+import { getCategoriesByGroup, getVisibleCategories } from '../constants/categories';
 import { usersByCategory } from '../data/users';
 import { CATEGORY_GROUPS, type CategoryGroup } from '../types';
+import { useSEO } from '../hooks/useSEO';
+import BeamsBackground from './BeamsBackground';
 
 export default function Homepage() {
+  useSEO({
+    title: "Top 25 in '25 | Topmate Awards",
+    description: "Celebrating the most exceptional creators on Topmate. Discover outstanding achievement across 31 categories.",
+  });
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
@@ -76,27 +82,24 @@ export default function Homepage() {
 
   return (
     <div className="w-full">
-      {/* Hero Section - Full Viewport */}
+      {/* Hero Section - Compact for earlier CTA visibility */}
       <div
         ref={heroRef}
-        className="min-h-screen flex flex-col items-center justify-center relative px-6 md:px-12 lg:px-16"
+        className="min-h-[70vh] lg:min-h-[75vh] flex flex-col items-center justify-center relative px-6 md:px-12 lg:px-16 pt-16"
       >
-        {/* Subtle radial gradient background */}
+        {/* Animated Beams Background */}
+        <BeamsBackground intensity="medium" />
+
+        {/* Bottom fade gradient for smooth transition */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
           style={{
-            background: 'radial-gradient(ellipse 80% 50% at 50% 30%, rgba(201,169,89,0.08) 0%, transparent 60%)'
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%)'
           }}
         />
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          {/* Year Badge */}
-          <div className="animate-hero inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/5 rounded-full border border-white/10">
-            <div className="w-2 h-2 rounded-full bg-[#c9a959] animate-pulse" />
-            <span className="text-xs md:text-sm text-white/60 font-space tracking-wide">2025 Edition</span>
-          </div>
-
           {/* Main Title */}
           <h1 className="animate-hero font-editorial text-5xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-tight mb-6">
             Top 25
@@ -104,12 +107,12 @@ export default function Homepage() {
           </h1>
 
           {/* Subtitle */}
-          <p className="animate-hero text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="animate-hero text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
             Celebrating the most exceptional creators on Topmate.
-            Discover outstanding achievement across {CATEGORIES.length} categories.
+            Discover outstanding achievement across {getVisibleCategories().length} categories.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Gold */}
           <button
             onClick={scrollToCategories}
             className="animate-hero group inline-flex items-center gap-3 px-8 py-4 bg-[#c9a959] text-black rounded-full font-medium text-sm md:text-base transition-all hover:bg-[#d4b86a] hover:scale-105"
@@ -129,7 +132,7 @@ export default function Homepage() {
         {/* Scroll Indicator */}
         <div
           ref={scrollIndicatorRef}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-0"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-0"
           onClick={scrollToCategories}
         >
           <span className="text-xs text-white/40 font-space tracking-widest uppercase">Scroll</span>
@@ -156,7 +159,7 @@ export default function Homepage() {
               All Categories
             </h2>
             <p className="text-white/40 text-sm md:text-base font-space">
-              {CATEGORIES.length} categories · 775+ creators
+              {getVisibleCategories().length} categories · 775+ creators
             </p>
           </div>
 
@@ -182,6 +185,7 @@ export default function Homepage() {
         <div
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          style={{ perspective: '1000px' }}
         >
           {filteredCategories.map((cat) => {
             const topUsers = usersByCategory[cat.slug]?.slice(0, 3) || [];
@@ -190,33 +194,59 @@ export default function Homepage() {
               <Link
                 key={cat.slug}
                 to={cat.route}
-                className="group relative cursor-pointer"
+                className="group/card relative cursor-pointer block"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                {/* Hover Gradient Light Effect */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl"
-                  style={{
-                    background: 'radial-gradient(circle at 50% 30%, rgba(255,255,255,0.1), transparent 70%)',
-                  }}
-                />
+                {/* Book-pull hover wrapper - separate from GSAP animation */}
+                <div className="transition-all duration-300 ease-out group-hover/card:scale-[1.02] group-hover/card:-translate-y-2">
+                  {/* Hover glow - spotlight effect from above */}
+                  <div
+                    className="absolute -inset-2 rounded-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none blur-lg"
+                    style={{
+                      background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,169,89,0.25) 0%, transparent 70%)'
+                    }}
+                  />
 
-                {/* Card Border - Figma-style Gradient */}
-                <div
-                  className="relative rounded-3xl p-[1px]"
-                  style={{
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%)'
-                  }}
-                >
+                  {/* Hover shadow - book lifting effect */}
+                  <div
+                    className="absolute inset-0 rounded-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{
+                      boxShadow: '0 20px 40px -12px rgba(0,0,0,0.6), 0 12px 28px -12px rgba(201,169,89,0.25), inset 0 1px 0 rgba(255,255,255,0.1)'
+                    }}
+                  />
+
+                  {/* Card Border - Figma-style Gradient */}
+                  <div
+                    className="relative rounded-3xl p-[1px] transition-all duration-300"
+                    style={{
+                      background: 'linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%)'
+                    }}
+                  >
                   {/* Card Content */}
-                  <div className="bg-black rounded-3xl p-6 md:p-8">
+                  <div className="bg-black group-hover/card:bg-[#0a0a0a] rounded-3xl p-6 md:p-8 transition-colors duration-300 overflow-hidden relative">
+                    {/* Top edge light reflection */}
+                    <div
+                      className="absolute inset-x-0 top-0 h-12 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(201,169,89,0.12) 0%, transparent 100%)'
+                      }}
+                    />
+
+                    {/* Subtle top highlight line on hover */}
+                    <div
+                      className="absolute inset-x-0 top-0 h-px opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 rounded-t-3xl"
+                      style={{
+                        background: 'linear-gradient(90deg, transparent 10%, rgba(201,169,89,0.5) 50%, transparent 90%)'
+                      }}
+                    />
                     {/* Top 3 Users Preview */}
                     {topUsers.length > 0 ? (
                       <div className="flex -space-x-3 mb-6">
                         {topUsers.map((user, idx) => (
                           <div
                             key={user.id}
-                            className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-black group-hover:border-white/10 transition-colors flex-shrink-0"
+                            className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-black group-hover/card:border-white/10 transition-colors flex-shrink-0"
                             style={{ zIndex: 3 - idx }}
                           >
                             <img
@@ -227,7 +257,7 @@ export default function Homepage() {
                           </div>
                         ))}
                         <div
-                          className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border-2 border-black flex items-center justify-center group-hover:bg-white/10 transition-colors flex-shrink-0"
+                          className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border-2 border-black flex items-center justify-center group-hover/card:bg-white/10 transition-colors flex-shrink-0"
                           style={{ zIndex: 0 }}
                         >
                           <span className="text-xs text-white/40">+22</span>
@@ -252,7 +282,7 @@ export default function Homepage() {
                     )}
 
                     {/* Category Info */}
-                    <h3 className="font-editorial text-2xl md:text-3xl text-white mb-3 group-hover:text-[#c9a959] transition-colors">
+                    <h3 className="font-space text-xl md:text-2xl text-white mb-3 group-hover/card:text-[#c9a959] transition-colors font-normal">
                       {cat.title}
                     </h3>
                     <p className="text-sm text-white/40 mb-6 line-clamp-2 font-space">
@@ -260,10 +290,10 @@ export default function Homepage() {
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-white/60 group-hover:text-white transition-colors">
+                    <div className="flex items-center gap-2 text-white/60 group-hover/card:text-white transition-colors">
                       <span className="text-sm font-space">View Rankings</span>
                       <svg
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                        className="w-4 h-4 transform group-hover/card:translate-x-1 transition-transform"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -271,6 +301,7 @@ export default function Homepage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </div>
+                  </div>
                   </div>
                 </div>
               </Link>

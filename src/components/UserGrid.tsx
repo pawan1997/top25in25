@@ -5,6 +5,7 @@ import { usersByCategory } from '../data/users';
 import { CATEGORIES } from '../constants/categories';
 import GridCard from './GridCard/GridCard';
 import CategoryShowcase from './CategoryShowcase';
+import { useSEO } from '../hooks/useSEO';
 
 export default function UserGrid() {
   const { category } = useParams<{ category: string }>();
@@ -12,6 +13,11 @@ export default function UserGrid() {
   const currentCategory = CATEGORIES.find(cat => cat.slug === category);
   const gridRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
+
+  useSEO({
+    title: currentCategory ? `${currentCategory.title} | Top 25 in '25` : "Top 25 in '25 | Topmate Awards",
+    description: currentCategory?.description || "Celebrating the most exceptional creators on Topmate.",
+  });
 
   useEffect(() => {
     if (!gridRef.current || !heroRef.current) return;

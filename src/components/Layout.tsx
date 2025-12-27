@@ -6,7 +6,7 @@ export default function Layout() {
   const isHomepage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen bg-dotted-grid relative">
+    <div className="min-h-screen bg-dotted-grid relative overflow-visible">
       <TopNav />
       <main className={isHomepage ? 'pt-12 md:pt-16 pb-16' : 'pt-32 md:pt-32 pb-16'}>
         <Outlet />
