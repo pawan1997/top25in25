@@ -3,14 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { CATEGORIES, getCategoriesByGroup } from '../constants/categories';
 import { usersByCategory } from '../data/users';
-import { CATEGORY_GROUPS, type CategoryGroup } from '../types';
+import { cohorts } from '../data/cohorts';
 
 export default function TopNav() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('platform');
+  // Always show platform categories since industry categories are hidden
+  const activeGroup = 'platform';
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const categoryItemsRef = useRef<HTMLAnchorElement[]>([]);
@@ -147,7 +148,9 @@ export default function TopNav() {
           {isDropdownOpen && (
             <div
               ref={dropdownRef}
-              className="fixed left-4 right-4 top-20 bottom-4 md:relative md:top-0 md:bottom-auto md:left-0 md:right-0 md:mt-2 overflow-hidden"
+              className={`fixed left-4 right-4 bottom-4 md:relative md:top-0 md:bottom-auto md:left-0 md:right-0 md:mt-2 overflow-hidden ${
+                isScrolled ? 'top-[52px]' : 'top-[108px]'
+              }`}
               style={{ opacity: 0 }}
             >
               <div className="relative border border-white/10 rounded-xl bg-gradient-to-b from-black/95 via-black/95 to-black backdrop-blur-xl shadow-2xl p-3 md:p-6 h-full md:h-auto overflow-y-auto">
@@ -165,8 +168,8 @@ export default function TopNav() {
                     background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%)'
                   }}
                 />
-                {/* Filter Chips */}
-                <div className="flex gap-2 mb-4">
+                {/* Filter Chips - Hidden since industry categories are disabled */}
+                {/* <div className="flex gap-2 mb-4">
                   {(Object.keys(CATEGORY_GROUPS) as CategoryGroup[]).map((group) => (
                     <button
                       key={group}
@@ -180,12 +183,16 @@ export default function TopNav() {
                       {CATEGORY_GROUPS[group].label}
                     </button>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-3" style={{ perspective: '1000px' }}>
                   {getCategoriesByGroup(activeGroup).map((category, index) => {
                     const isActive = currentPath === category.route;
-                    const topUsers = usersByCategory[category.slug]?.slice(0, 3) || [];
+                    // For cohorts category, show cohort instructors instead of users
+                    const isCohorts = category.slug === 'cohorts';
+                    const topUsers = isCohorts
+                      ? cohorts.slice(0, 3).map(c => ({ id: c.id, name: c.instructor.name, imageUrl: c.instructor.imageUrl }))
+                      : usersByCategory[category.slug]?.slice(0, 3) || [];
                     return (
                       <Link
                         key={category.slug}

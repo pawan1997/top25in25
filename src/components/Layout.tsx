@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-dotted-grid relative overflow-visible">
       <TopNav />
-      <main className={isHomepage ? 'pt-12 md:pt-16 pb-16' : 'pt-32 md:pt-32 pb-16'}>
+      <main className={isHomepage ? 'pt-12 md:pt-16 pb-16' : 'pt-[140px] md:pt-32 pb-16'}>
         <Outlet />
       </main>
     </div>

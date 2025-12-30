@@ -4,266 +4,216 @@ export interface Cohort {
   instructor: {
     name: string;
     imageUrl: string;
+    imageUrl2?: string; // Second photo for dual instructors
     title: string;
   };
   topic: string;
-  sessions: number;
   duration: string;
-  learnings: string[];
-  enrolledCount: number;
   price: string;
   startDate: string;
   cohortUrl: string;
-  featured?: boolean;
+  landingPageUrl?: string;
 }
 
+// Real cohort data extracted from landing pages
 export const cohorts: Cohort[] = [
   {
     id: 'cohort-1',
-    name: 'Mastering GenAI for Product Managers',
+    name: 'End-to-End Job Assistance Masterclass for Europe',
     instructor: {
-      name: 'Aishwarya Srinivasan',
-      imageUrl: 'https://static.topmate.io/7pXWU8fGN1xd6WzMQFDt9Y.avif',
-      title: 'AI Product Lead @ Google'
+      name: 'Gurpreet Kaur Jaggi',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://static.topmate.io/ebiJwYzFn5KeGFtsMd4SqJ.jpg',
+      title: 'Lead Recruiter • 50K+ CVs Reviewed'
     },
-    topic: 'AI/ML',
-    sessions: 8,
-    duration: '4 weeks',
-    learnings: ['Build AI-powered products', 'Prompt engineering mastery', 'AI roadmap planning'],
-    enrolledCount: 342,
-    price: '₹12,999',
-    startDate: 'Jan 15, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/genai-pm',
-    featured: true
+    topic: 'Career',
+    duration: '6 weeks',
+    price: '₹59,100',
+    startDate: 'Jan 26, 2026',
+    cohortUrl: 'https://topmate.io/gurpreet_kaur_jaggi/1835201',
+    landingPageUrl: 'https://topmate.io/gurpreet_kaur_jaggi/page/SR8MdBIuYU'
   },
   {
     id: 'cohort-2',
-    name: 'Data Engineering Bootcamp',
+    name: 'Analytics Engineer Accelerator (DE & DA)',
     instructor: {
-      name: 'Shubham Wadekar',
-      imageUrl: 'https://static.topmate.io/pGbDwovAjJJLnk26TPz6D4.jpg',
-      title: 'Senior Data Engineer @ Meta'
+      name: 'Durgesh + Pragya',
+      imageUrl: 'https://static.topmate.io/uD2wR7U2e4rxrVd1cRs3en.webp',
+      imageUrl2: 'https://topmate.io/cdn-cgi/image/width=640,quality=90/https://static.topmate.io/sonNisvutwh5u6KdyotLzp.jpg',
+      title: 'Data Engineering Experts'
     },
     topic: 'Data Science',
-    sessions: 12,
-    duration: '6 weeks',
-    learnings: ['Build data pipelines', 'Master Spark & Airflow', 'Real-world projects'],
-    enrolledCount: 528,
-    price: '₹15,999',
-    startDate: 'Jan 20, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/data-engineering',
-    featured: true
+    duration: '12 weeks',
+    price: '₹55,499',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/durgesh_yadav/1833913',
+    landingPageUrl: 'https://topmate.io/durgesh_yadav/page/yPusP9Owyy'
   },
   {
     id: 'cohort-3',
-    name: 'PM Interview Masterclass',
+    name: 'Break Into Senior Engineering Roles',
     instructor: {
-      name: 'Shreya Mahendru',
-      imageUrl: 'https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_2db39a8c-1e5b-441c-8258-13baa79fddfd.jpeg',
-      title: 'Product @ Steer Health'
+      name: 'Hemant',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://static.topmate.io/gx1jEYUsSgggQpJAhYLSw8.jpeg',
+      title: 'Senior Engineer • FAANG Mentor'
     },
-    topic: 'Product Management',
-    sessions: 6,
-    duration: '3 weeks',
-    learnings: ['Crack FAANG PM interviews', 'Product sense frameworks', 'Mock interviews'],
-    enrolledCount: 215,
-    price: '₹8,999',
-    startDate: 'Jan 18, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/pm-interview'
+    topic: 'Software',
+    duration: '5 weeks',
+    price: '₹50,000',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/hemant/1837174',
+    landingPageUrl: 'https://topmate.io/hemant/page/3FC9RuLLgZ'
   },
   {
     id: 'cohort-4',
-    name: 'Cloud & DevOps Zero to Hero',
+    name: 'Dubai Job Market Strategy',
     instructor: {
-      name: 'Sanjeev',
-      imageUrl: 'https://static.topmate.io/abCiGGCLq8unAGDzQAmtWo.jpg',
-      title: 'Cloud Architect @ AWS'
+      name: 'Charul Motwani',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://static.topmate.io/hiMDy294e4z2FC1VGeYq8U.jpeg',
+      title: 'UAE Career Strategist'
     },
-    topic: 'Cloud',
-    sessions: 10,
-    duration: '5 weeks',
-    learnings: ['AWS/GCP/Azure mastery', 'CI/CD pipelines', 'Kubernetes deployment'],
-    enrolledCount: 467,
-    price: '₹14,999',
-    startDate: 'Jan 25, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/cloud-devops',
-    featured: true
+    topic: 'Career',
+    duration: '6 weeks',
+    price: '$649',
+    startDate: 'Jan 31, 2026',
+    cohortUrl: 'https://topmate.io/charulmotwani/1841015',
+    landingPageUrl: 'https://topmate.io/charulmotwani/page/XJt2ZUV8s2'
   },
   {
     id: 'cohort-5',
-    name: 'Career Pivot to Tech',
+    name: 'Dubai Job Search Cohort Program',
     instructor: {
-      name: 'Ankita Jaiswal',
-      imageUrl: 'https://static.topmate.io/xhawk2FdFNpAxcSf3XzaZJ.JPG',
-      title: 'Career Coach | Ex-Flipkart'
+      name: 'Manas Bichhoo',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_f2e8e5a5-75d6-49dc-a80e-434a0a9f70cc.jpeg',
+      title: 'Dubai Career Expert'
     },
     topic: 'Career',
-    sessions: 8,
-    duration: '4 weeks',
-    learnings: ['Resume optimization', 'Interview strategies', 'Networking tactics'],
-    enrolledCount: 389,
-    price: '₹6,999',
-    startDate: 'Jan 22, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/career-pivot'
+    duration: '6 weeks',
+    price: '$649',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/manasbichoo/1841000',
+    landingPageUrl: 'https://topmate.io/manasbichoo/page/bhESm95tSX'
   },
   {
     id: 'cohort-6',
-    name: 'SQL to Data Analyst',
+    name: '8-Week Career Breakthrough Cohort',
     instructor: {
-      name: 'MAZHER KHAN',
-      imageUrl: 'https://topmate-staging.s3.amazonaws.com/9NQoYHEJu9apWSS5kdpZmK.png',
-      title: 'Senior Data Analyst | 6 Years'
+      name: 'Vijay Chandola',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_b434c7f4-739b-40c8-9c9e-55bd81751188.jpeg',
+      title: 'Hiring Manager • Career Coach'
     },
-    topic: 'Data Science',
-    sessions: 10,
-    duration: '5 weeks',
-    learnings: ['Advanced SQL queries', 'Tableau dashboards', 'Business analytics'],
-    enrolledCount: 612,
-    price: '₹9,999',
-    startDate: 'Feb 1, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/sql-analyst'
+    topic: 'Career',
+    duration: '8 weeks',
+    price: '₹60,000',
+    startDate: 'Jan 18, 2026',
+    cohortUrl: 'https://topmate.io/vijaychandola/1841850',
+    landingPageUrl: 'https://topmate.io/vijaychandola/page/EoZqInqRJw'
   },
   {
     id: 'cohort-7',
-    name: 'UX Design Fundamentals',
+    name: 'AI Product Manager 8-Week Career Accelerator',
     instructor: {
-      name: 'Priya Sharma',
-      imageUrl: 'https://static.topmate.io/7Jn6xiUrQsncihaSqFGp6J.png',
-      title: 'Design Lead @ Razorpay'
+      name: 'Karan Sethi',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-staging.s3.ap-south-1.amazonaws.com/fJm3rAfEnvrLrq977sGdjM.jpg',
+      title: 'AI Product Lead'
     },
-    topic: 'Design',
-    sessions: 8,
-    duration: '4 weeks',
-    learnings: ['Design thinking', 'Figma mastery', 'Portfolio building'],
-    enrolledCount: 276,
-    price: '₹11,999',
-    startDate: 'Jan 28, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/ux-design'
+    topic: 'AI/ML',
+    duration: '8 weeks',
+    price: '₹70,000',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/karan_sethi/1837145',
+    landingPageUrl: 'https://topmate.io/karan_sethi/page/EeZYInq9JP'
   },
   {
     id: 'cohort-8',
-    name: 'Full Stack JavaScript',
+    name: 'Transition from PM to AI Product Leader',
     instructor: {
-      name: 'Avinash Kumar',
-      imageUrl: 'https://topmate-staging.s3.ap-south-1.amazonaws.com/beCDTUkJdRgHCR2iz15nEZ.png',
-      title: 'Founder @ GreatStack'
+      name: 'Malthi & Aniket',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Malthi-SS-1669274484.jpeg',
+      title: 'AI Product Leaders'
     },
-    topic: 'Software',
-    sessions: 14,
-    duration: '7 weeks',
-    learnings: ['React & Node.js', 'MongoDB & APIs', 'Deploy to production'],
-    enrolledCount: 445,
-    price: '₹18,999',
-    startDate: 'Feb 5, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/fullstack-js'
+    topic: 'AI/ML',
+    duration: '6 weeks',
+    price: '₹55,000',
+    startDate: 'Jan 17, 2026',
+    cohortUrl: 'https://www.topmate.io/malthi_ss/1840846',
+    landingPageUrl: 'https://www.topmate.io/malthi_ss/page/x8oK7oS2IK'
   },
   {
     id: 'cohort-9',
-    name: 'Personal Branding on LinkedIn',
+    name: 'Launch Your Canadian Career in 6 Sessions',
     instructor: {
-      name: 'Krishan Kumar',
-      imageUrl: 'https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_d47f74db-b2a3-45ec-801f-5604a5221b5b.jpeg',
-      title: '130K+ LinkedIn | SWE'
+      name: 'Ron Johnson',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_16359a3d-72cc-4fb1-8944-482b970554b4.jpeg',
+      title: 'Canada Career Expert'
     },
-    topic: 'Marketing',
-    sessions: 6,
-    duration: '3 weeks',
-    learnings: ['Content strategy', 'Viral post formulas', 'Network building'],
-    enrolledCount: 523,
-    price: '₹5,999',
-    startDate: 'Jan 30, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/linkedin-branding'
+    topic: 'Career',
+    duration: '6 weeks',
+    price: '₹60,000',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/ron_johnson/1841086',
+    landingPageUrl: 'https://topmate.io/ron_johnson/page/nPy82CBa3H'
   },
   {
     id: 'cohort-10',
-    name: 'Machine Learning A-Z',
+    name: 'InfraThrone Elite - Operational DevOps Bootcamp',
     instructor: {
-      name: 'Ajay Shenoy',
-      imageUrl: 'https://static.topmate.io/7Jn6xiUrQsncihaSqFGp6J.png',
-      title: '14+ yrs AI/ML | IISc PhD'
+      name: 'Saurabh Chaudhary',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=640,quality=90/https://static.topmate.io/6jAQdbdV69pqbsr8DT4HQU.jpg',
+      title: 'DevOps Architect • 6+ Years'
     },
-    topic: 'AI/ML',
-    sessions: 12,
+    topic: 'Cloud',
     duration: '6 weeks',
-    learnings: ['ML algorithms deep-dive', 'Python for ML', 'End-to-end projects'],
-    enrolledCount: 378,
-    price: '₹16,999',
-    startDate: 'Feb 10, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/ml-az',
-    featured: true
+    price: '₹39,999',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/saurav_chaudhary_1/1755939',
+    landingPageUrl: 'https://topmate.io/saurav_chaudhary_1/page/3FCHR9LJgx'
   },
   {
     id: 'cohort-11',
-    name: 'Financial Planning Masterclass',
+    name: 'Get Job-Ready as an AI-Powered Product Manager',
     instructor: {
-      name: 'CA Shubham Maloo',
-      imageUrl: 'https://topmate-staging.s3.amazonaws.com/b2xnpAGrAfgV3uWYQdpLKA.png',
-      title: 'Finance Influencer | 8+ Years'
+      name: 'Sachin Sharma',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://topmate-staging.s3.ap-south-1.amazonaws.com/ru1XthVWfXRXEZp6QmkAf4.JPG',
+      title: 'Senior Product Manager'
     },
-    topic: 'Finance',
-    sessions: 8,
-    duration: '4 weeks',
-    learnings: ['Tax optimization', 'Investment strategies', 'Wealth building'],
-    enrolledCount: 298,
-    price: '₹7,999',
-    startDate: 'Feb 8, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/finance-planning'
+    topic: 'Product Management',
+    duration: '6 weeks',
+    price: '₹60,000',
+    startDate: 'Jan 18, 2026',
+    cohortUrl: 'https://topmate.io/sachin_sharma/1841037',
+    landingPageUrl: 'https://topmate.io/sachin_sharma/page/xHoa7hSoIb'
   },
   {
     id: 'cohort-12',
-    name: 'Study Abroad Success',
+    name: 'AI in AEC Cohort - 10x Your Productivity',
     instructor: {
-      name: 'Kamal Nanda',
-      imageUrl: 'https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_13936e2b-e464-464b-8b55-e51c3bd9cc20.jpeg',
-      title: 'Digital Marketing Manager, Canada'
+      name: 'Naman Mehta',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=640,quality=90/https://static.topmate.io/6ihZPq2daEU9mibMtSfdZn.jpg',
+      title: 'AI & AEC Expert'
     },
-    topic: 'Study Abroad',
-    sessions: 6,
-    duration: '3 weeks',
-    learnings: ['Application strategy', 'Visa guidance', 'Scholarship hunting'],
-    enrolledCount: 187,
-    price: '₹8,999',
-    startDate: 'Feb 12, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/study-abroad'
+    topic: 'AI/ML',
+    duration: '7 weeks',
+    price: '₹100,000',
+    startDate: 'Jan 17, 2026',
+    cohortUrl: 'https://topmate.io/namanmehta2211/1788737',
+    landingPageUrl: 'https://topmate.io/namanmehta2211/page/K2BA9htAgN'
   },
   {
     id: 'cohort-13',
-    name: 'System Design for Interviews',
+    name: '6-Week Job Search & Hiring Roadmap for Europe',
     instructor: {
-      name: 'Ramit Kundu',
-      imageUrl: 'https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_3fb0dc2d-04d5-4fce-90d1-a1cdbe74dcdb.jpeg',
-      title: 'Software Engineer @ Swiggy'
+      name: 'Payal in Europe',
+      imageUrl: 'https://topmate.io/cdn-cgi/image/width=256,quality=90/https://static.topmate.io/sPjT6eEgK7e279PKVUTyMJ.jpeg',
+      title: 'Europe Career Consultant'
     },
-    topic: 'Software',
-    sessions: 8,
-    duration: '4 weeks',
-    learnings: ['Distributed systems', 'Scalability patterns', 'Mock interviews'],
-    enrolledCount: 356,
-    price: '₹12,999',
-    startDate: 'Feb 15, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/system-design'
-  },
-  {
-    id: 'cohort-14',
-    name: 'Consulting Case Cracker',
-    instructor: {
-      name: 'Priyasha Das',
-      imageUrl: 'https://topmate-staging.s3.amazonaws.com/nJpNcyqU1EWG7NhQ2mm4LX.jpeg',
-      title: 'Founder @ CRACK XAT'
-    },
-    topic: 'Consulting',
-    sessions: 10,
-    duration: '5 weeks',
-    learnings: ['Case frameworks', 'Guesstimates', 'GDPI preparation'],
-    enrolledCount: 234,
-    price: '₹10,999',
-    startDate: 'Feb 18, 2025',
-    cohortUrl: 'https://topmate.io/cohorts/consulting-cases'
+    topic: 'Study Abroad',
+    duration: '6 weeks',
+    price: '₹55,000',
+    startDate: 'Jan 2026',
+    cohortUrl: 'https://topmate.io/payalineurope/1849380',
+    landingPageUrl: 'https://topmate.io/payalineurope/page/uM1ZoPEHga'
   }
 ];
 
 export const getCohortsByTopic = (topic: string) =>
   cohorts.filter(c => c.topic.toLowerCase() === topic.toLowerCase());
-
-export const getFeaturedCohorts = () =>
-  cohorts.filter(c => c.featured);

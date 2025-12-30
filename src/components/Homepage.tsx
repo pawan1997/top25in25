@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { getCategoriesByGroup, getVisibleCategories } from '../constants/categories';
 import { usersByCategory } from '../data/users';
-import { CATEGORY_GROUPS, type CategoryGroup } from '../types';
+import { cohorts } from '../data/cohorts';
 import { useSEO } from '../hooks/useSEO';
 import BeamsBackground from './BeamsBackground';
 
@@ -16,7 +16,8 @@ export default function Homepage() {
   const gridRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const categoriesSectionRef = useRef<HTMLDivElement>(null);
-  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('platform');
+  // Always show platform categories since industry categories are hidden
+  const activeGroup = 'platform';
 
   useEffect(() => {
     if (!heroRef.current) return;
@@ -163,8 +164,8 @@ export default function Homepage() {
             </p>
           </div>
 
-          {/* Filter Chips */}
-          <div className="flex gap-2">
+          {/* Filter Chips - Hidden since industry categories are disabled */}
+          {/* <div className="flex gap-2">
             {(Object.keys(CATEGORY_GROUPS) as CategoryGroup[]).map((group) => (
               <button
                 key={group}
@@ -178,7 +179,7 @@ export default function Homepage() {
                 {CATEGORY_GROUPS[group].label}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Category Grid */}
@@ -188,7 +189,11 @@ export default function Homepage() {
           style={{ perspective: '1000px' }}
         >
           {filteredCategories.map((cat) => {
-            const topUsers = usersByCategory[cat.slug]?.slice(0, 3) || [];
+            // For cohorts category, show cohort instructors instead of users
+            const isCohorts = cat.slug === 'cohorts';
+            const topUsers = isCohorts
+              ? cohorts.slice(0, 3).map(c => ({ id: c.id, name: c.instructor.name, imageUrl: c.instructor.imageUrl }))
+              : usersByCategory[cat.slug]?.slice(0, 3) || [];
 
             return (
               <Link

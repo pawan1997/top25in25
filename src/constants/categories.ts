@@ -3,13 +3,6 @@ import type { Category } from '../types';
 export const CATEGORIES: Category[] = [
   // Platform Achievement Categories
   {
-    slug: 'cohorts',
-    title: "Top Cohorts '25",
-    route: '/cohorts',
-    group: 'platform',
-    description: 'The most impactful learning experiences on Topmate — live cohorts that transformed careers and built communities of learners.'
-  },
-  {
     slug: 'overall',
     title: "Overall Top '25",
     route: '/overall',
@@ -99,6 +92,13 @@ export const CATEGORIES: Category[] = [
     route: '/views',
     group: 'platform',
     description: 'The most discovered profiles on Topmate — creators whose reputation and content draw audiences like magnets.'
+  },
+  {
+    slug: 'cohorts',
+    title: "Top Cohorts '26",
+    route: '/cohorts',
+    group: 'platform',
+    description: 'Best-selling cohorts from 2025 that you can enroll in from January 2025 — join the most impactful learning experiences on Topmate.'
   },
 
   // Industry Categories
@@ -231,7 +231,27 @@ export const CATEGORIES: Category[] = [
 ];
 
 // Categories to hide from navigation (but keep routes working)
-const HIDDEN_CATEGORIES = ['cohorts'];
+const HIDDEN_CATEGORIES = [
+  // Hide all industry categories
+  'ai',
+  'career',
+  'cloud',
+  'consulting',
+  'data-science',
+  'design',
+  'education',
+  'finance',
+  'healthcare',
+  'investments',
+  'job-search',
+  'legal',
+  'marketing',
+  'mental-health',
+  'product-management',
+  'software',
+  'study-abroad',
+  'wellness'
+];
 
 // Helper to get categories by group (excludes hidden categories)
 export const getCategoriesByGroup = (group: 'platform' | 'industry') =>

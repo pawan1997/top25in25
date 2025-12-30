@@ -1,18 +1,12 @@
-import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { CATEGORIES, getCategoriesByGroup } from '../constants/categories';
+import { getCategoriesByGroup } from '../constants/categories';
 import { usersByCategory } from '../data/users';
-import { CATEGORY_GROUPS, type CategoryGroup } from '../types';
+import { cohorts } from '../data/cohorts';
 
 export default function CategoryShowcase() {
   const { category } = useParams<{ category: string }>();
-  const [activeGroup, setActiveGroup] = useState<CategoryGroup>(() => {
-    // Set initial group based on current category
-    const currentCat = CATEGORIES.find(c => c.slug === category);
-    return currentCat?.group || 'platform';
-  });
-
-  const filteredCategories = getCategoriesByGroup(activeGroup);
+  // Always show platform categories since industry categories are hidden
+  const filteredCategories = getCategoriesByGroup('platform');
 
   return (
     <div className="w-full">
@@ -27,30 +21,11 @@ export default function CategoryShowcase() {
         </div>
       </div>
 
-      {/* Section Header with Filter Chips */}
+      {/* Section Header */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 mt-16 md:mt-20 mb-12 md:mb-14">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <h2 className="font-space text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-5xl xl:text-6xl text-white font-light tracking-[0.08em] uppercase whitespace-nowrap">
-            All Categories
-          </h2>
-
-          {/* Filter Chips */}
-          <div className="flex gap-2">
-            {(Object.keys(CATEGORY_GROUPS) as CategoryGroup[]).map((group) => (
-              <button
-                key={group}
-                onClick={() => setActiveGroup(group)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                  activeGroup === group
-                    ? 'bg-[#c9a959] text-black'
-                    : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/10'
-                }`}
-              >
-                {CATEGORY_GROUPS[group].label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <h2 className="font-space text-[7vw] sm:text-[5vw] md:text-[4vw] lg:text-5xl xl:text-6xl text-white font-light tracking-[0.08em] uppercase whitespace-nowrap">
+          All Categories
+        </h2>
       </div>
 
       {/* Category Grid - Matching User Card Style */}
@@ -58,7 +33,11 @@ export default function CategoryShowcase() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-7 mb-16 md:mb-24">
         {filteredCategories.map((cat) => {
           const isActive = cat.slug === category;
-          const topUsers = usersByCategory[cat.slug]?.slice(0, 3) || [];
+          // For cohorts category, show cohort instructors instead of users
+          const isCohorts = cat.slug === 'cohorts';
+          const topUsers = isCohorts
+            ? cohorts.slice(0, 3).map(c => ({ id: c.id, name: c.instructor.name, imageUrl: c.instructor.imageUrl }))
+            : usersByCategory[cat.slug]?.slice(0, 3) || [];
 
           return (
             <Link
