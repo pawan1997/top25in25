@@ -397,6 +397,13 @@ export const CATEGORIES: Category[] = [
     description: 'Top creators in Tech Learning — discover the best experts helping others succeed.'
   },
   {
+    slug: 'travel-lifestyle-personal-growth',
+    title: 'Travel, Lifestyle & Personal Growth',
+    route: '/travel-lifestyle-personal-growth',
+    group: 'industry',
+    description: 'Top creators in Travel, Lifestyle & Personal Growth — discover the best experts helping others succeed.'
+  },
+  {
     slug: 'unique-expertise',
     title: 'Unique Expertise',
     route: '/unique-expertise',
