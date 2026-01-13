@@ -124,11 +124,11 @@ export const CATEGORIES: Category[] = [
     description: 'Top creators in Academic Guidance — discover the best experts helping others succeed.'
   },
   {
-    slug: 'accounting-tax-advisory',
-    title: 'Accounting & Tax Advisory',
-    route: '/accounting-tax-advisory',
+    slug: 'accounting-tax-finance-consulting',
+    title: 'Accounting, Tax & Finance Consulting',
+    route: '/accounting-tax-finance-consulting',
     group: 'industry',
-    description: 'Top creators in Accounting & Tax Advisory — discover the best experts helping others succeed.'
+    description: 'Top creators in Accounting, Tax & Finance Consulting — discover the best experts helping others succeed.'
   },
   {
     slug: 'astrology-tarot-manifestation',
@@ -276,13 +276,6 @@ export const CATEGORIES: Category[] = [
     route: '/legal-consultations-careers',
     group: 'industry',
     description: 'Top creators in Legal Consultations & Careers — discover the best experts helping others succeed.'
-  },
-  {
-    slug: 'lifestyle-personal-growth',
-    title: 'Lifestyle & Personal Growth',
-    route: '/lifestyle-personal-growth',
-    group: 'industry',
-    description: 'Top creators in Lifestyle & Personal Growth — discover the best experts helping others succeed.'
   },
   {
     slug: 'marketing-creative-services',
