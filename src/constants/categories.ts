@@ -101,159 +101,328 @@ export const CATEGORIES: Category[] = [
     description: 'Best-selling cohorts from 2025 that you can enroll in from January 2025 — join the most impactful learning experiences on Topmate.'
   },
 
-  // Industry Categories
+  // Industry Categories - Generated from finaltop25.csv
   {
-    slug: 'ai',
-    title: 'AI',
-    route: '/ai',
+    slug: 'ai-ml',
+    title: 'AI / ML',
+    route: '/ai-ml',
     group: 'industry',
-    description: 'Pioneers shaping the future — the leading minds in Artificial Intelligence and Machine Learning, helping others master the technology revolution.'
+    description: 'Top creators in AI / ML — discover the best experts helping others succeed.'
   },
   {
-    slug: 'career',
-    title: 'Career',
-    route: '/career',
+    slug: 'ai-ml-2',
+    title: 'AI / ML 2',
+    route: '/ai-ml-2',
     group: 'industry',
-    description: 'Career catalysts who turn ambitions into achievements — trusted guides helping professionals navigate pivotal moments in their journey.'
+    description: 'Top creators in AI / ML 2 — discover the best experts helping others succeed.'
   },
   {
-    slug: 'cloud',
-    title: 'Cloud',
-    route: '/cloud',
+    slug: 'academic-guidance',
+    title: 'Academic Guidance',
+    route: '/academic-guidance',
     group: 'industry',
-    description: 'Cloud and DevOps visionaries — experts who help businesses and engineers scale to new heights with modern infrastructure.'
+    description: 'Top creators in Academic Guidance — discover the best experts helping others succeed.'
   },
   {
-    slug: 'consulting',
-    title: 'Consulting',
-    route: '/consulting',
+    slug: 'accounting-tax-advisory',
+    title: 'Accounting & Tax Advisory',
+    route: '/accounting-tax-advisory',
     group: 'industry',
-    description: 'Strategic masterminds — seasoned consultants who bring clarity to complex business challenges and drive transformational results.'
+    description: 'Top creators in Accounting & Tax Advisory — discover the best experts helping others succeed.'
   },
   {
-    slug: 'data-science',
-    title: 'Data Science',
-    route: '/data-science',
+    slug: 'astrology-tarot-manifestation',
+    title: 'Astrology / Tarot / Manifestation',
+    route: '/astrology-tarot-manifestation',
     group: 'industry',
-    description: 'Data wizards who turn numbers into narratives — experts empowering the next generation of analysts and scientists.'
+    description: 'Top creators in Astrology / Tarot / Manifestation — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'career-immigration-abroad',
+    title: 'Career & Immigration Abroad',
+    route: '/career-immigration-abroad',
+    group: 'industry',
+    description: 'Top creators in Career & Immigration Abroad — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'career-guidance',
+    title: 'Career Guidance',
+    route: '/career-guidance',
+    group: 'industry',
+    description: 'Top creators in Career Guidance — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'career-mentorship',
+    title: 'Career Mentorship',
+    route: '/career-mentorship',
+    group: 'industry',
+    description: 'Top creators in Career Mentorship — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'cloud-devops',
+    title: 'Cloud & DevOps',
+    route: '/cloud-devops',
+    group: 'industry',
+    description: 'Top creators in Cloud & DevOps — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'coaching-personal-development',
+    title: 'Coaching & Personal Development',
+    route: '/coaching-personal-development',
+    group: 'industry',
+    description: 'Top creators in Coaching & Personal Development — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'consulting-business-analysts',
+    title: 'Consulting & Business Analysts',
+    route: '/consulting-business-analysts',
+    group: 'industry',
+    description: 'Top creators in Consulting & Business Analysts — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'content-branding-creative',
+    title: 'Content, Branding & Creative',
+    route: '/content-branding-creative',
+    group: 'industry',
+    description: 'Top creators in Content, Branding & Creative — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'data-analytics-science',
+    title: 'Data Analytics & Science',
+    route: '/data-analytics-science',
+    group: 'industry',
+    description: 'Top creators in Data Analytics & Science — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'data-engineering',
+    title: 'Data Engineering',
+    route: '/data-engineering',
+    group: 'industry',
+    description: 'Top creators in Data Engineering — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'data-science-career',
+    title: 'Data Science Career',
+    route: '/data-science-career',
+    group: 'industry',
+    description: 'Top creators in Data Science Career — discover the best experts helping others succeed.'
   },
   {
     slug: 'design',
     title: 'Design',
     route: '/design',
     group: 'industry',
-    description: 'Creative visionaries — UX/UI masters and product designers who craft experiences that delight and inspire.'
+    description: 'Top creators in Design — discover the best experts helping others succeed.'
   },
   {
-    slug: 'education',
-    title: 'Education',
-    route: '/education',
+    slug: 'education-learning',
+    title: 'Education & Learning',
+    route: '/education-learning',
     group: 'industry',
-    description: 'Champions of learning — educators and academic mentors dedicated to unlocking potential and shaping futures.'
+    description: 'Top creators in Education & Learning — discover the best experts helping others succeed.'
   },
   {
-    slug: 'finance',
-    title: 'Finance',
-    route: '/finance',
+    slug: 'finance-banking-careers',
+    title: 'Finance & Banking Careers',
+    route: '/finance-banking-careers',
     group: 'industry',
-    description: 'Financial architects — experts who demystify money matters and help build pathways to financial freedom.'
+    description: 'Top creators in Finance & Banking Careers — discover the best experts helping others succeed.'
   },
   {
-    slug: 'healthcare',
-    title: 'Healthcare',
-    route: '/healthcare',
+    slug: 'global-careers-relocation',
+    title: 'Global Careers & Relocation',
+    route: '/global-careers-relocation',
     group: 'industry',
-    description: 'Healers and health advocates — professionals dedicated to improving lives through expert medical guidance and care.'
+    description: 'Top creators in Global Careers & Relocation — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'health-wellness',
+    title: 'Health & Wellness',
+    route: '/health-wellness',
+    group: 'industry',
+    description: 'Top creators in Health & Wellness — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'international-career-moves',
+    title: 'International Career Moves',
+    route: '/international-career-moves',
+    group: 'industry',
+    description: 'Top creators in International Career Moves — discover the best experts helping others succeed.'
   },
   {
     slug: 'investments',
     title: 'Investments',
     route: '/investments',
     group: 'industry',
-    description: 'Wealth builders — investment strategists and trading experts who help others grow and protect their portfolios.'
+    description: 'Top creators in Investments — discover the best experts helping others succeed.'
   },
   {
-    slug: 'job-search',
-    title: 'Job Search',
-    route: '/job-search',
+    slug: 'job-hunting-strategies',
+    title: 'Job Hunting Strategies',
+    route: '/job-hunting-strategies',
     group: 'industry',
-    description: 'Career launchpad experts — specialists who crack the code on resumes, interviews, and landing dream opportunities.'
+    description: 'Top creators in Job Hunting Strategies — discover the best experts helping others succeed.'
   },
   {
-    slug: 'legal',
-    title: 'Legal',
-    route: '/legal',
+    slug: 'job-search-placement',
+    title: 'Job Search & Placement',
+    route: '/job-search-placement',
     group: 'industry',
-    description: 'Legal luminaries — trusted advisors navigating the complexities of law, immigration, and compliance with precision.'
+    description: 'Top creators in Job Search & Placement — discover the best experts helping others succeed.'
   },
   {
-    slug: 'marketing',
-    title: 'Marketing',
-    route: '/marketing',
+    slug: 'legal-consultations-careers',
+    title: 'Legal Consultations & Careers',
+    route: '/legal-consultations-careers',
     group: 'industry',
-    description: 'Growth hackers and brand builders — marketing mavens who know how to capture attention and drive results.'
+    description: 'Top creators in Legal Consultations & Careers — discover the best experts helping others succeed.'
   },
   {
-    slug: 'mental-health',
-    title: 'Mental Health',
-    route: '/mental-health',
+    slug: 'lifestyle-personal-growth',
+    title: 'Lifestyle & Personal Growth',
+    route: '/lifestyle-personal-growth',
     group: 'industry',
-    description: 'Guardians of well-being — compassionate professionals helping others find balance, clarity, and inner peace.'
+    description: 'Top creators in Lifestyle & Personal Growth — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'marketing-creative-services',
+    title: 'Marketing & Creative Services',
+    route: '/marketing-creative-services',
+    group: 'industry',
+    description: 'Top creators in Marketing & Creative Services — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'medical-career',
+    title: 'Medical Career',
+    route: '/medical-career',
+    group: 'industry',
+    description: 'Top creators in Medical Career — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'product-pm-careers',
+    title: 'Product & PM Careers',
+    route: '/product-pm-careers',
+    group: 'industry',
+    description: 'Top creators in Product & PM Careers — discover the best experts helping others succeed.'
   },
   {
     slug: 'product-management',
     title: 'Product Management',
     route: '/product-management',
     group: 'industry',
-    description: 'Product visionaries — strategic leaders who guide aspiring PMs to build products users love.'
+    description: 'Top creators in Product Management — discover the best experts helping others succeed.'
   },
   {
-    slug: 'software',
-    title: 'Software',
-    route: '/software',
+    slug: 'professional-development',
+    title: 'Professional Development',
+    route: '/professional-development',
     group: 'industry',
-    description: 'Code craftsmen — elite software engineers and mentors who elevate developers from good to exceptional.'
+    description: 'Top creators in Professional Development — discover the best experts helping others succeed.'
   },
   {
-    slug: 'study-abroad',
-    title: 'Study Abroad',
-    route: '/study-abroad',
+    slug: 'psychology-mental-health',
+    title: 'Psychology & Mental Health',
+    route: '/psychology-mental-health',
     group: 'industry',
-    description: 'Global dream enablers — experts who open doors to world-class education and international opportunities.'
+    description: 'Top creators in Psychology & Mental Health — discover the best experts helping others succeed.'
   },
   {
-    slug: 'wellness',
-    title: 'Wellness',
-    route: '/wellness',
+    slug: 'psychology-mental-health-2',
+    title: 'Psychology & Mental Health 2',
+    route: '/psychology-mental-health-2',
     group: 'industry',
-    description: 'Holistic life coaches — guides who help others achieve physical vitality, mental clarity, and life balance.'
-  }
+    description: 'Top creators in Psychology & Mental Health 2 — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'resume-interview-prep',
+    title: 'Resume & Interview Prep',
+    route: '/resume-interview-prep',
+    group: 'industry',
+    description: 'Top creators in Resume & Interview Prep — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'sap-project-management',
+    title: 'SAP & Project Management',
+    route: '/sap-project-management',
+    group: 'industry',
+    description: 'Top creators in SAP & Project Management — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'software-development',
+    title: 'Software Development',
+    route: '/software-development',
+    group: 'industry',
+    description: 'Top creators in Software Development — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'software-engineering',
+    title: 'Software Engineering',
+    route: '/software-engineering',
+    group: 'industry',
+    description: 'Top creators in Software Engineering — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'specialized-consulting',
+    title: 'Specialized Consulting',
+    route: '/specialized-consulting',
+    group: 'industry',
+    description: 'Top creators in Specialized Consulting — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'specialized-services',
+    title: 'Specialized Services',
+    route: '/specialized-services',
+    group: 'industry',
+    description: 'Top creators in Specialized Services — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'startups-entrepreneurship',
+    title: 'Startups & Entrepreneurship',
+    route: '/startups-entrepreneurship',
+    group: 'industry',
+    description: 'Top creators in Startups & Entrepreneurship — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'tech-careers-software',
+    title: 'Tech Careers & Software',
+    route: '/tech-careers-software',
+    group: 'industry',
+    description: 'Top creators in Tech Careers & Software — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'tech-education',
+    title: 'Tech Education',
+    route: '/tech-education',
+    group: 'industry',
+    description: 'Top creators in Tech Education — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'tech-learning',
+    title: 'Tech Learning',
+    route: '/tech-learning',
+    group: 'industry',
+    description: 'Top creators in Tech Learning — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'unique-expertise',
+    title: 'Unique Expertise',
+    route: '/unique-expertise',
+    group: 'industry',
+    description: 'Top creators in Unique Expertise — discover the best experts helping others succeed.'
+  },
+  {
+    slug: 'working-abroad',
+    title: 'Working Abroad',
+    route: '/working-abroad',
+    group: 'industry',
+    description: 'Top creators in Working Abroad — discover the best experts helping others succeed.'
+  },
 ];
 
 // Categories to hide from navigation (but keep routes working)
-const HIDDEN_CATEGORIES = [
-  // Hide all industry categories
-  'ai',
-  'career',
-  'cloud',
-  'consulting',
-  'data-science',
-  'design',
-  'education',
-  'finance',
-  'healthcare',
-  'investments',
-  'job-search',
-  'legal',
-  'marketing',
-  'mental-health',
-  'product-management',
-  'software',
-  'study-abroad',
-  'wellness'
-];
+const HIDDEN_CATEGORIES: string[] = [];
 
-// Helper to get categories by group (excludes hidden categories)
+// Helper to get categories by group
 export const getCategoriesByGroup = (group: 'platform' | 'industry') =>
   CATEGORIES.filter(cat => cat.group === group && !HIDDEN_CATEGORIES.includes(cat.slug));
 
