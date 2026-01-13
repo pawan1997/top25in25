@@ -33,8 +33,8 @@ function parseCSV(content) {
     }
     fields.push(current);
 
-    // CSV columns: username,Display Name,Profile pic,topmate_link,category,title,earnings,bookings,source,classification_method,earnings_rank
-    const [username, displayName, profilePic, topmateLink, category, title, earnings, bookings, source, classificationMethod, earningsRank] = fields;
+    // CSV columns: username,Display Name,Profile pic,topmate_link,category,title,earnings,bookings,source,classification_method,earnings_rank,category_link
+    const [username, displayName, profilePic, topmateLink, category, title, earnings, bookings, source, classificationMethod, earningsRank, categoryLink] = fields;
 
     // Skip invalid rows
     if (!username || !category) continue;
@@ -51,6 +51,7 @@ function parseCSV(content) {
       source,
       classificationMethod,
       earningsRank,
+      categoryLink,
       originalLine: line
     });
   }
@@ -81,11 +82,33 @@ for (const user of users) {
   usersByCategory[user.category].push(user);
 }
 
-// Sort each category by earnings (descending) and assign correct rank
+// Sort each category by earnings (descending) and assign correct rank (capped at 25 with ties)
 for (const category of Object.keys(usersByCategory)) {
   usersByCategory[category].sort((a, b) => b.earnings - a.earnings);
+
+  const totalUsers = usersByCategory[category].length;
+  const maxRank = 25;
+
   usersByCategory[category].forEach((user, index) => {
-    user.correctRank = index + 1;
+    let rank;
+    if (totalUsers <= maxRank) {
+      // Normal ranking if 25 or fewer users
+      rank = index + 1;
+    } else {
+      // Cap at 25: distribute extra users across the last few ranks
+      const extraUsers = totalUsers - maxRank;
+      if (index < maxRank - extraUsers) {
+        // Users that get unique ranks
+        rank = index + 1;
+      } else {
+        // Remaining users share ranks starting from (maxRank - extraUsers + 1) up to 25
+        const sharedRankStart = maxRank - extraUsers;
+        const positionInShared = index - sharedRankStart;
+        const ranksToShare = extraUsers + 1;
+        rank = Math.min(maxRank, sharedRankStart + 1 + Math.floor(positionInShared / Math.ceil((totalUsers - sharedRankStart) / ranksToShare)));
+      }
+    }
+    user.correctRank = rank;
   });
 }
 
@@ -108,7 +131,8 @@ for (const category of allCategories) {
       user.bookings,
       escapeCSV(user.source),
       escapeCSV(user.classificationMethod),
-      user.correctRank  // Use the correct rank based on earnings within category
+      user.correctRank,  // Use the correct rank (capped at 25 with ties)
+      escapeCSV(user.categoryLink)
     ].join(',');
     newCSV += row + '\n';
   }
