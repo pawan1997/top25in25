@@ -101,9 +101,29 @@ for (const user of allUsers) {
   });
 }
 
-// Sort each category by rank
+// Sort each category by rank and cap at rank 25 with ties if needed
 for (const slug of Object.keys(usersByCategory)) {
   usersByCategory[slug].sort((a, b) => a.rank - b.rank);
+
+  const totalUsers = usersByCategory[slug].length;
+  const maxRank = 25;
+
+  if (totalUsers > maxRank) {
+    // Recalculate ranks with ties to cap at 25
+    const extraUsers = totalUsers - maxRank;
+    usersByCategory[slug] = usersByCategory[slug].map((user, index) => {
+      let rank;
+      if (index < maxRank - extraUsers) {
+        rank = index + 1;
+      } else {
+        const sharedRankStart = maxRank - extraUsers;
+        const positionInShared = index - sharedRankStart;
+        const ranksToShare = extraUsers + 1;
+        rank = Math.min(maxRank, sharedRankStart + 1 + Math.floor(positionInShared / Math.ceil((totalUsers - sharedRankStart) / ranksToShare)));
+      }
+      return { ...user, rank, id: `${slug}-${index + 1}` };
+    });
+  }
 }
 
 // Read existing users.ts

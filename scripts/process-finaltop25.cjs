@@ -80,25 +80,53 @@ console.log(`Parsed ${allUsers.length} valid users from CSV`);
 const uniqueCategories = [...new Set(allUsers.map(u => u.category))].sort();
 console.log(`Found ${uniqueCategories.length} unique categories`);
 
-// Group users by category, sort by earnings (highest first), assign rank
+// Group users by category, sort by earnings (highest first), assign rank (capped at 25 with ties)
 const usersByCategory = {};
 for (const category of uniqueCategories) {
   const slug = generateSlug(category);
-  const categoryUsers = allUsers
+  const sortedUsers = allUsers
     .filter(u => u.category === category)
-    .sort((a, b) => b.earnings - a.earnings) // Sort by earnings descending
-    .map((user, index) => ({
+    .sort((a, b) => b.earnings - a.earnings); // Sort by earnings descending
+
+  const totalUsers = sortedUsers.length;
+  const maxRank = 25;
+
+  // Calculate ranks with ties if more than 25 users
+  // If 28 users: ranks 1-22 are unique, then 4 users share ranks 23, 24, 25 (2 at rank 25)
+  const categoryUsers = sortedUsers.map((user, index) => {
+    let rank;
+    if (totalUsers <= maxRank) {
+      // Normal ranking if 25 or fewer users
+      rank = index + 1;
+    } else {
+      // Cap at 25: distribute extra users across the last few ranks
+      const extraUsers = totalUsers - maxRank;
+      if (index < maxRank - extraUsers) {
+        // Users that get unique ranks
+        rank = index + 1;
+      } else {
+        // Remaining users share ranks starting from (maxRank - extraUsers + 1) up to 25
+        // Distribute them evenly
+        const sharedRankStart = maxRank - extraUsers;
+        const positionInShared = index - sharedRankStart;
+        const ranksToShare = extraUsers + 1; // How many rank positions to distribute users across
+        rank = Math.min(maxRank, sharedRankStart + 1 + Math.floor(positionInShared / Math.ceil((totalUsers - sharedRankStart) / ranksToShare)));
+      }
+    }
+
+    return {
       id: `${slug}-${index + 1}`,
       category: slug,
       name: user.displayName || user.username,
       username: `@${user.username}`,
       imageUrl: user.profilePic || `https://topmate.io/api/og-image/${user.username}`,
-      rank: index + 1,
+      rank: rank,
       profileUrl: user.topmateLink,
       bio: user.title,
       categoryMetric: '', // Don't reveal earnings stats
       subtitle: '',
-    }));
+    };
+  });
 
   usersByCategory[slug] = categoryUsers;
 }
