@@ -12,7 +12,7 @@ export default function TopNav() {
   const currentPath = location.pathname;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('platform');
+  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('industry');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const categoryItemsRef = useRef<HTMLAnchorElement[]>([]);

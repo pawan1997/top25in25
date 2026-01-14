@@ -15,7 +15,7 @@ export default function Homepage() {
     description: "Celebrating the most exceptional creators on Topmate. Discover outstanding achievement across 59 categories.",
   });
 
-  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('platform');
+  const [activeGroup, setActiveGroup] = useState<CategoryGroup>('industry');
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
