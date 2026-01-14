@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import type { User } from '../../types';
 import { CATEGORIES } from '../../constants/categories';
+import { getUserCategories } from '../../utils/userCategories';
 
 interface GridCardProps {
   user: User;
@@ -366,6 +367,32 @@ export default function GridCard({ user }: GridCardProps) {
                       {user.bio}
                     </p>
                   )}
+
+                  {/* Other Categories */}
+                  {(() => {
+                    const otherCategories = getUserCategories(user.username, category);
+                    if (otherCategories.length === 0) return null;
+                    return (
+                      <div className="mb-6 w-full">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3">
+                          Also featured in
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {otherCategories.slice(0, 5).map((cat) => (
+                            <Link
+                              key={cat.categorySlug}
+                              to={cat.categoryRoute}
+                              onClick={handleCloseModal}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#c9a959]/30 rounded-full text-[11px] text-white/60 hover:text-white/90 transition-all"
+                            >
+                              <span className="text-[#c9a959]">#{cat.rank}</span>
+                              <span className="truncate max-w-[120px]">{cat.categoryTitle}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
 
                   {/* CTA Button */}
                   <a
