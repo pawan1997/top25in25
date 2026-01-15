@@ -111,10 +111,10 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'ai-ml-2',
-    title: 'AI / ML 2',
+    title: 'Applied AI & Automation',
     route: '/ai-ml-2',
     group: 'industry',
-    description: 'Top creators in AI / ML 2 — discover the best experts helping others succeed.'
+    description: 'Top creators in Applied AI & Automation — discover the best experts helping others succeed.'
   },
   {
     slug: 'academic-guidance',
@@ -321,10 +321,10 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'psychology-mental-health-2',
-    title: 'Psychology & Mental Health 2',
+    title: 'Mental Health Professionals',
     route: '/psychology-mental-health-2',
     group: 'industry',
-    description: 'Top creators in Psychology & Mental Health 2 — discover the best experts helping others succeed.'
+    description: 'Top mental health professionals — therapists, counselors, and wellness experts helping you thrive.'
   },
   {
     slug: 'resume-interview-prep',

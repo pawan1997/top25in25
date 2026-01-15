@@ -4318,6 +4318,90 @@ const industryUsers: Record<string, User[]> = {
       "bio": "ML | NLP | LLMs | Generative AI | Product Management",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-1",
+      "category": "ai-ml-2",
+      "name": "Nabaneet",
+      "username": "@nabaneet_pradhan",
+      "imageUrl": "https://static.topmate.io/5VTHB42ymVyS6qMrCcr4Yv.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/nabaneet_pradhan",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-2",
+      "category": "ai-ml-2",
+      "name": "Abhishek",
+      "username": "@abhishekvj",
+      "imageUrl": "https://static.topmate.io/bbtHNj4mshFd6FcWuXhyMY.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/abhishekvj",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-3",
+      "category": "ai-ml-2",
+      "name": "Ankita",
+      "username": "@ankita_sarda100",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_4c7e6342-e232-4fe4-9a49-635b4672bffe.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/ankita_sarda100",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-4",
+      "category": "ai-ml-2",
+      "name": "Tripathi",
+      "username": "@tripathi_aditya_prakash",
+      "imageUrl": "https://static.topmate.io/694VbayracY1AxnMtwVK4h.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/tripathi_aditya_prakash",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-5",
+      "category": "ai-ml-2",
+      "name": "Akhil Kumar",
+      "username": "@akhil_kumar_alampally",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_34596a7a-93b4-4e87-8688-231a2fa1ff94.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/akhil_kumar_alampally",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-6",
+      "category": "ai-ml-2",
+      "name": "Gao",
+      "username": "@gaodalie_ai",
+      "imageUrl": "https://static.topmate.io/8K2fGRkbbBnSKS2k7wibs1.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/gaodalie_ai",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "ai-ml-2-new-7",
+      "category": "ai-ml-2",
+      "name": "Youssef",
+      "username": "@youssef_hosni",
+      "imageUrl": "https://static.topmate.io/5ne5mCuCxj1YaENQzdJx5d.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/youssef_hosni",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "academic-guidance": [
@@ -4462,6 +4546,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 12,
       "profileUrl": "https://topmate.io/jhoom_baba",
       "bio": "Placed @ Deloitte (BIG 4) | Ministry of Home Affairs | 215K + Followers Instagram & Youtube | Delhi University @9 CGPA",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "academic-guidance-new-1",
+      "category": "academic-guidance",
+      "name": "Jugal",
+      "username": "@jugaldb",
+      "imageUrl": "https://static.topmate.io/dFWY6oanAiqZ8PR4XTamTa.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/jugaldb",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -4632,6 +4728,54 @@ const industryUsers: Record<string, User[]> = {
       "rank": 14,
       "profileUrl": "https://topmate.io/e_startupindia",
       "bio": "Talk & Consult Top CA, CS, Lawyer, finance and corporate professionals",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "accounting-tax-finance-consulting-new-1",
+      "category": "accounting-tax-finance-consulting",
+      "name": "Himanshu",
+      "username": "@himanshuagarwal",
+      "imageUrl": "https://static.topmate.io/3g1AoQzaBxv31ij7AgUmcB.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/himanshuagarwal",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "accounting-tax-finance-consulting-new-2",
+      "category": "accounting-tax-finance-consulting",
+      "name": "Tushar",
+      "username": "@garp_scr_prep_blog",
+      "imageUrl": "https://static.topmate.io/d74LqvffefsnZ73gb9SuAs.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/garp_scr_prep_blog",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "accounting-tax-finance-consulting-new-3",
+      "category": "accounting-tax-finance-consulting",
+      "name": "Pankaj",
+      "username": "@pankajmaheshwari",
+      "imageUrl": "https://static.topmate.io/7GadmF1qb1SZNW5bfaUor3.JPG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/pankajmaheshwari",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "accounting-tax-finance-consulting-new-4",
+      "category": "accounting-tax-finance-consulting",
+      "name": "Risk",
+      "username": "@risk_nex",
+      "imageUrl": "https://static.topmate.io/bocmuGymMnYe44odkgEvgR.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/risk_nex",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -4922,6 +5066,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 24,
       "profileUrl": "https://topmate.io/nitesh_alag",
       "bio": "‚ú¥Ô∏è Vedic Astrology & Numerology (with written or call-based readings)",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "astrology-tarot-manifestation-new-1",
+      "category": "astrology-tarot-manifestation",
+      "name": "Subhechcha",
+      "username": "@subhechcha_ganguly",
+      "imageUrl": "https://static.topmate.io/8QN3KQRToPquTrqToG1GBQ.webp",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/subhechcha_ganguly",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -5226,6 +5382,54 @@ const industryUsers: Record<string, User[]> = {
       "bio": "**Career Guidance - India => Netherlands**",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "career-immigration-abroad-new-1",
+      "category": "career-immigration-abroad",
+      "name": "Fisayo",
+      "username": "@fisayogracieabby",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/7nNMytAv7anjC3Nom6bkPC.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/fisayogracieabby",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-immigration-abroad-new-2",
+      "category": "career-immigration-abroad",
+      "name": "Jo",
+      "username": "@singh_jo",
+      "imageUrl": "https://topmate.io/singh_jo",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/singh_jo",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-immigration-abroad-new-3",
+      "category": "career-immigration-abroad",
+      "name": "Gursahib",
+      "username": "@gursahib_ca",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Gursahib-Singh-1692645139.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/gursahib_ca",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-immigration-abroad-new-4",
+      "category": "career-immigration-abroad",
+      "name": "Naveen",
+      "username": "@naveen_bhagtani",
+      "imageUrl": "https://static.topmate.io/2YMPKUiyxDRy1bKRLcjXB5.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/naveen_bhagtani",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "career-guidance": [
@@ -5322,6 +5526,90 @@ const industryUsers: Record<string, User[]> = {
       "rank": 8,
       "profileUrl": "https://topmate.io/jagan_coach",
       "bio": "Ex-CTO / ICF ACC / Executive, Leadership & Career Coach / Mentor",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-1",
+      "category": "career-guidance",
+      "name": "Upasna",
+      "username": "@upasna_r",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_9fe95571-9f83-4595-9df9-d9a71ef7741f.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/upasna_r",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-2",
+      "category": "career-guidance",
+      "name": "Sanaz",
+      "username": "@sanaz_saeedi",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_e376c487-0668-4b0c-97e6-e8c89f6ab038.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sanaz_saeedi",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-3",
+      "category": "career-guidance",
+      "name": "Rhea Ratra",
+      "username": "@rhea_sondhi",
+      "imageUrl": "https://static.topmate.io/3deFd3kCEXXTGKLauGeEtT.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/rhea_sondhi",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-4",
+      "category": "career-guidance",
+      "name": "Jasmine",
+      "username": "@jasmine_flora",
+      "imageUrl": "https://static.topmate.io/f1fjy7gcma84dpYvi68Egm.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/jasmine_flora",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-5",
+      "category": "career-guidance",
+      "name": "Prakash",
+      "username": "@prreddy1357",
+      "imageUrl": "https://static.topmate.io/kdTseuHA8P89q3AZgkCBXu.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/prreddy1357",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-6",
+      "category": "career-guidance",
+      "name": "Priyanka",
+      "username": "@priyanka_peeramsetty",
+      "imageUrl": "https://static.topmate.io/dEpmrLxLWRfPamGyWtwwHx.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/priyanka_peeramsetty",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "career-guidance-new-7",
+      "category": "career-guidance",
+      "name": "Sudha Madhuri",
+      "username": "@sudha_madhuri",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Sudha Madhuri-Chatti-1738456250.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sudha_madhuri",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     },
@@ -5976,6 +6264,42 @@ const industryUsers: Record<string, User[]> = {
       "bio": "DevOps & AWS Engineer |Cloud & DevOps Application Developer | Python Developer",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "cloud-devops-new-1",
+      "category": "cloud-devops",
+      "name": "Dr. Atul",
+      "username": "@dratulgrover",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_d1f90025-27ba-45e6-ac81-47060f5d9e5c.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dratulgrover",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "cloud-devops-new-2",
+      "category": "cloud-devops",
+      "name": "Dattatraya",
+      "username": "@dattatraya_shinde",
+      "imageUrl": "https://topmate-staging.s3.amazonaws.com/a3zpwbZwzxT2FFahyoNrjQ.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dattatraya_shinde",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "cloud-devops-new-3",
+      "category": "cloud-devops",
+      "name": "Damien",
+      "username": "@damienjburks",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Damien-Burks-1739514454.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/damienjburks",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "coaching-personal-development": [
@@ -6276,6 +6600,66 @@ const industryUsers: Record<string, User[]> = {
       "rank": 25,
       "profileUrl": "https://topmate.io/smriti_pandey",
       "bio": "Personal development| Mindset shifting|",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "coaching-personal-development-new-1",
+      "category": "coaching-personal-development",
+      "name": "eWOW",
+      "username": "@ewow",
+      "imageUrl": "https://static.topmate.io/uucQtu8uwFshqXva8TSTJQ.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/ewow",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "coaching-personal-development-new-2",
+      "category": "coaching-personal-development",
+      "name": "Blake",
+      "username": "@dr_curtis",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/8aruD9MUFhK1wJDD6PAxhi.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dr_curtis",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "coaching-personal-development-new-3",
+      "category": "coaching-personal-development",
+      "name": "Milena",
+      "username": "@milenatoro",
+      "imageUrl": "https://static.topmate.io/bzkEcab6cVQAuN8mK8CYjc.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/milenatoro",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "coaching-personal-development-new-4",
+      "category": "coaching-personal-development",
+      "name": "Navya",
+      "username": "@navya_manjunath",
+      "imageUrl": "https://static.topmate.io/n53VWbhqjqbgBNGyh3oZDL.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/navya_manjunath",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "coaching-personal-development-new-5",
+      "category": "coaching-personal-development",
+      "name": "Dr. Ajit",
+      "username": "@dr_ajitkar",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_b520fdfc-6b09-4fe0-88f8-dbcdb8d76fa5.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dr_ajitkar",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -7184,6 +7568,42 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Senior Business Intelligence Analyst@ Google || Ex Amazon || Ex Evalueserve || Ex Cognizant || SRM University",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "data-analytics-science-new-1",
+      "category": "data-analytics-science",
+      "name": "V N Sai Kumar",
+      "username": "@venkata_naga_sai_kumar_bysani",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_95c1465e-dccc-422b-aed7-01124666a3e8.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/venkata_naga_sai_kumar_bysani",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-analytics-science-new-2",
+      "category": "data-analytics-science",
+      "name": "Alexandre",
+      "username": "@alex_andorra",
+      "imageUrl": "https://static.topmate.io/qD9yryQ7LkePQ5n7jUURZe.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/alex_andorra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-analytics-science-new-3",
+      "category": "data-analytics-science",
+      "name": "Ashish",
+      "username": "@bi_tricks",
+      "imageUrl": "https://static.topmate.io/mdwfEg2xKCdXuVmhPQYdqF.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/bi_tricks",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "data-engineering": [
@@ -7486,6 +7906,30 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Data Engineer at KPMG | Multi Cloud & DevOps Data Engineer | Expert in Databricks, Snowflake SQL, PySpark, Python, DBT, Azure and AWS",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "data-engineering-new-1",
+      "category": "data-engineering",
+      "name": "DataArchitectStudio",
+      "username": "@dataarchitectstudio",
+      "imageUrl": "https://static.topmate.io/g6sEYW8TeWQ3Xh5MTkPXrN.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dataarchitectstudio",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-engineering-new-2",
+      "category": "data-engineering",
+      "name": "Sai Krishna",
+      "username": "@saikrishna_chivukula",
+      "imageUrl": "https://static.topmate.io/6YYaoWycidYAfBcKtcFkDv.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/saikrishna_chivukula",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "data-science-career": [
@@ -7786,6 +8230,42 @@ const industryUsers: Record<string, User[]> = {
       "rank": 25,
       "profileUrl": "https://topmate.io/vikash_das",
       "bio": "üöÄüí°Get personalized 1-1 mentorship from Data Science & MLOps Specialist around:",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-science-career-new-1",
+      "category": "data-science-career",
+      "name": "BuildML",
+      "username": "@buildmledu",
+      "imageUrl": "https://static.topmate.io/mjGnGm19A9adUkXNJ2GW6t.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/buildmledu",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-science-career-new-2",
+      "category": "data-science-career",
+      "name": "Nikhil",
+      "username": "@nikhil_pentapalli",
+      "imageUrl": "https://static.topmate.io/2LQ8EY6cMdKKA7pDCTWTrv.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/nikhil_pentapalli",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "data-science-career-new-3",
+      "category": "data-science-career",
+      "name": "Coding",
+      "username": "@coding",
+      "imageUrl": "https://static.topmate.io/77gzuHABE4tjozgXskvpkc.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/coding",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -8100,6 +8580,42 @@ const industryUsers: Record<string, User[]> = {
       "rank": 25,
       "profileUrl": "https://topmate.io/nayanika_dey",
       "bio": "Architect turned product designer üé®",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "design-new-1",
+      "category": "design",
+      "name": "Radhika",
+      "username": "@radhika_agrawal_servicedesigner",
+      "imageUrl": "https://static.topmate.io/1p7guvJYtaxBRXPqMQWuud.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/radhika_agrawal_servicedesigner",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "design-new-2",
+      "category": "design",
+      "name": "Seju",
+      "username": "@seju_ui_ux",
+      "imageUrl": "https://static.topmate.io/gphX8dKdY6ev39vh2Puizr.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/seju_ui_ux",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "design-new-3",
+      "category": "design",
+      "name": "Sandeep",
+      "username": "@sandeep_karmarkar",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Sandeep-Karmarkar-1738384789.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sandeep_karmarkar",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -9020,6 +9536,42 @@ const industryUsers: Record<string, User[]> = {
       "bio": "AI/ML Researcher  @Microsoft & @MIT",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "global-careers-relocation-new-1",
+      "category": "global-careers-relocation",
+      "name": "Baishakhi",
+      "username": "@baishakhiconnor",
+      "imageUrl": "https://static.topmate.io/xfo5wnBg8RbNg2FwPbCjbe.jfif",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/baishakhiconnor",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "global-careers-relocation-new-2",
+      "category": "global-careers-relocation",
+      "name": "Payell",
+      "username": "@globalmobility",
+      "imageUrl": "https://static.topmate.io/boL2bAX8EKW5Vxh6pCdzUk.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/globalmobility",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "global-careers-relocation-new-3",
+      "category": "global-careers-relocation",
+      "name": "Telmo",
+      "username": "@landingyouthatjob",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_32b318d0-aa28-4482-b6c4-365958dd5618.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/landingyouthatjob",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "health-wellness": [
@@ -9272,6 +9824,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 21,
       "profileUrl": "https://topmate.io/fit_chef",
       "bio": "Certified Nutritionist I Fitness & Mindset Coach I Women's Hormonal Health Expert I Fueling Young Athletes I Founder, FitChef by Shitija I Your Fit Guide to a Fit Life",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "health-wellness-new-1",
+      "category": "health-wellness",
+      "name": "Priyanka",
+      "username": "@fitcatpiku",
+      "imageUrl": "https://static.topmate.io/cKHrLPyMxrsbjKzaawKKyg.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/fitcatpiku",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -10410,6 +10974,18 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Analytics Lead @Meesho | Linkedin 170k+ Followers",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "job-search-placement-new-1",
+      "category": "job-search-placement",
+      "name": "Adarsh Kumar",
+      "username": "@adarsh_kumar_pandey",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_1ec0341a-48bc-4bdb-a1de-0cc5db650a21.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/adarsh_kumar_pandey",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "legal-consultations-careers": [
@@ -10990,6 +11566,18 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Digital Marketing | 8 years + | Publicis Groupe | Ex-Dentsu, Group M",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "marketing-creative-services-new-1",
+      "category": "marketing-creative-services",
+      "name": "apurv",
+      "username": "@apurv_singh",
+      "imageUrl": "https://static.topmate.io/xxZLLm7VeASz2CUZcxQr9u.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/apurv_singh",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "medical-career": [
@@ -11292,6 +11880,42 @@ const industryUsers: Record<string, User[]> = {
       "bio": "NEET-PG '24 : 740",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "medical-career-new-1",
+      "category": "medical-career",
+      "name": "The Serene",
+      "username": "@the_serene_sedator",
+      "imageUrl": "https://static.topmate.io/ezpDKSJHhVt13LYSwPkyc4.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/the_serene_sedator",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "medical-career-new-2",
+      "category": "medical-career",
+      "name": "Samanta",
+      "username": "@drsamantadhulipala",
+      "imageUrl": "https://static.topmate.io/2FHz6eSJDXVxHgGS2uaubu.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/drsamantadhulipala",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "medical-career-new-3",
+      "category": "medical-career",
+      "name": "Jaya",
+      "username": "@jaya_singh23",
+      "imageUrl": "https://static.topmate.io/554cViFZk7nimoHNTp78mu.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/jaya_singh23",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "product-pm-careers": [
@@ -11591,6 +12215,18 @@ const industryUsers: Record<string, User[]> = {
       "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_96e3dde1-da88-4b78-8476-0d557627a6c6.jpeg",
       "rank": 25,
       "profileUrl": "https://topmate.io/aakanksha_sharma10",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "product-pm-careers-new-1",
+      "category": "product-pm-careers",
+      "name": "Jyothi",
+      "username": "@jyothi_nookula",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_336dabae-9d64-41f9-bd17-1b609d7dd91c.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/jyothi_nookula",
       "bio": "",
       "categoryMetric": "",
       "subtitle": ""
@@ -11906,6 +12542,42 @@ const industryUsers: Record<string, User[]> = {
       "rank": 25,
       "profileUrl": "https://topmate.io/pmcoachsumit",
       "bio": "Product Leader at Amazon and Alexa with 14+ years in Product.",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "product-management-new-1",
+      "category": "product-management",
+      "name": "Rishabh",
+      "username": "@rishabhdhingra",
+      "imageUrl": "https://static.topmate.io/fotUNVr59ezZDNetCNv7bX.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/rishabhdhingra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "product-management-new-2",
+      "category": "product-management",
+      "name": "Pratik",
+      "username": "@pratikn",
+      "imageUrl": "https://topmate-staging.s3.amazonaws.com/5tY8VWxz3UP8x8WRTwNL9G.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/pratikn",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "product-management-new-3",
+      "category": "product-management",
+      "name": "Sagar",
+      "username": "@sagar_nikam",
+      "imageUrl": "https://static.topmate.io/bUxkEbf5iR2JYU3VzcdAFU.JPG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sagar_nikam",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -12586,6 +13258,102 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Psychology Educator @Psychoshala and Therapist",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-1",
+      "category": "psychology-mental-health-2",
+      "name": "Desi",
+      "username": "@desi_therapyy",
+      "imageUrl": "https://static.topmate.io/eGTc1gMrqJVmAbCcZHt1kV.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/desi_therapyy",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-2",
+      "category": "psychology-mental-health-2",
+      "name": "Dr.Dhruti",
+      "username": "@the_innerwellbeing",
+      "imageUrl": "https://static.topmate.io/sE1Q1EoaU4rrexh9Cp8ks2.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/the_innerwellbeing",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-3",
+      "category": "psychology-mental-health-2",
+      "name": "Vidhi",
+      "username": "@vidhi_chudasama",
+      "imageUrl": "https://static.topmate.io/7J2ukqCnrcEjDPMRBvDt2r.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/vidhi_chudasama",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-4",
+      "category": "psychology-mental-health-2",
+      "name": "Kiran",
+      "username": "@kiran_godara",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_12dd5c79-c690-41be-a638-bfa775f0ebc7.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/kiran_godara",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-5",
+      "category": "psychology-mental-health-2",
+      "name": "Vamika",
+      "username": "@therapywithvamika",
+      "imageUrl": "https://static.topmate.io/jDJXuipUDAERovhQc8QPBk.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/therapywithvamika",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-6",
+      "category": "psychology-mental-health-2",
+      "name": "Sonal",
+      "username": "@sonal_saini",
+      "imageUrl": "https://static.topmate.io/bX9cnm9HAwFwE9GVeCDh2G.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sonal_saini",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-7",
+      "category": "psychology-mental-health-2",
+      "name": "Rhea",
+      "username": "@rahi_therapy",
+      "imageUrl": "https://static.topmate.io/599e82Pd2h7BiEQ857WGfx.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/rahi_therapy",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-2-new-8",
+      "category": "psychology-mental-health-2",
+      "name": "Roma",
+      "username": "@roma_fernandes",
+      "imageUrl": "https://static.topmate.io/4ZkbVKJW76LNFx3kG5pTYv.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/roma_fernandes",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "resume-interview-prep": [
@@ -12885,6 +13653,114 @@ const industryUsers: Record<string, User[]> = {
       "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Varun-Vohra-1696108496.jpeg",
       "rank": 25,
       "profileUrl": "https://topmate.io/varunvohra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-1",
+      "category": "resume-interview-prep",
+      "name": "Sumit",
+      "username": "@sumit_lad",
+      "imageUrl": "https://static.topmate.io/ai5cyp2ydiooEXwQBDQWaN.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sumit_lad",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-2",
+      "category": "resume-interview-prep",
+      "name": "Vivek",
+      "username": "@vivekbansal",
+      "imageUrl": "https://static.topmate.io/d5oHaccDn7M1U8dng3DDJ8.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/vivekbansal",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-3",
+      "category": "resume-interview-prep",
+      "name": "Nagendra",
+      "username": "@nagendra_reddy29",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_77bb621d-2ec4-4d02-8778-b7f339bdca96.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/nagendra_reddy29",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-4",
+      "category": "resume-interview-prep",
+      "name": "Kriti",
+      "username": "@kriti_rohilla",
+      "imageUrl": "https://static.topmate.io/aMgdpYkbwJAvWBbhggkTFt.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/kriti_rohilla",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-5",
+      "category": "resume-interview-prep",
+      "name": "Suryakant",
+      "username": "@suryakant",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_299147a2-01d8-479e-9b0b-d131a30a92d9.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/suryakant",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-6",
+      "category": "resume-interview-prep",
+      "name": "Neha",
+      "username": "@neha_bendre",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Neha-Bendre-1752055415.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/neha_bendre",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-7",
+      "category": "resume-interview-prep",
+      "name": "Ranjeet",
+      "username": "@ranjeet_ranjan10",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Ranjeet-Ranjan-1697653138.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/ranjeet_ranjan10",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-8",
+      "category": "resume-interview-prep",
+      "name": "Manali",
+      "username": "@manali_mange",
+      "imageUrl": "https://static.topmate.io/kzCFZobmEDyvhypv492B2P.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/manali_mange",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "resume-interview-prep-new-9",
+      "category": "resume-interview-prep",
+      "name": "Morgan",
+      "username": "@morganyoung",
+      "imageUrl": "https://topmate-staging.s3.amazonaws.com/cLQXePbFPAdcEzPPapBLhr.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/morganyoung",
       "bio": "",
       "categoryMetric": "",
       "subtitle": ""
@@ -13468,6 +14344,66 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Software Engineer - III  @Walmart  | Ex-Siemens | Ex-Capgemini | Java Backend  |  VNR VJIET",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "software-development-new-1",
+      "category": "software-development",
+      "name": "Abhay",
+      "username": "@abhayprince",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/Abhay-Prince-1718388432.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/abhayprince",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-development-new-2",
+      "category": "software-development",
+      "name": "Kushan",
+      "username": "@kushansen92",
+      "imageUrl": "https://static.topmate.io/5ehMPUMqoQTiyDXXjsHar5.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/kushansen92",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-development-new-3",
+      "category": "software-development",
+      "name": "Sourav",
+      "username": "@sourav_singh11",
+      "imageUrl": "https://static.topmate.io/5veBapckz2KfBujx2MapDq.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sourav_singh11",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-development-new-4",
+      "category": "software-development",
+      "name": "Yash",
+      "username": "@yash_kumar13",
+      "imageUrl": "https://topmate-staging.s3.amazonaws.com/9cCqSgkddNahVMMPpVtABT.JPG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/yash_kumar13",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-development-new-5",
+      "category": "software-development",
+      "name": "Kishan",
+      "username": "@kishansheth",
+      "imageUrl": "https://static.topmate.io/sUnZXDZawCxMjb5MvFEfss.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/kishansheth",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "software-engineering": [
@@ -13806,6 +14742,138 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Principal Software Engineer and career coach with more than 11 yrs of experience with launching and scaling products at Microsoft.",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-1",
+      "category": "software-engineering",
+      "name": "Devang",
+      "username": "@idevangsharma",
+      "imageUrl": "https://static.topmate.io/7T6maUYM6ZS5qgFXMwEU9z.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/idevangsharma",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-2",
+      "category": "software-engineering",
+      "name": "Chirag",
+      "username": "@engineerchirag",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/db3SG6CZg8yh9wzquwCa7P.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/engineerchirag",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-3",
+      "category": "software-engineering",
+      "name": "Jyotish",
+      "username": "@jyotish_bhaskar",
+      "imageUrl": "https://static.topmate.io/4wZwRBdw9YK2hiJSwNeRJS.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/jyotish_bhaskar",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-4",
+      "category": "software-engineering",
+      "name": "Nitesh",
+      "username": "@niteshx2",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_182ad19b-028f-4f25-91fd-ff48beb8684c.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/niteshx2",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-5",
+      "category": "software-engineering",
+      "name": "Gaurav",
+      "username": "@gauravkabra",
+      "imageUrl": "https://static.topmate.io/oJbjnGEFUtJEEZ9aNB4ysX.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/gauravkabra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-6",
+      "category": "software-engineering",
+      "name": "Shakti",
+      "username": "@shakti_lenka",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_be9d7904-ae01-44e3-9739-b61baf3cfe45.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/shakti_lenka",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-7",
+      "category": "software-engineering",
+      "name": "Prashant",
+      "username": "@prashant_priyadarshi",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/m2RWqcrANNeSrCfhcqzDz7.JPG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/prashant_priyadarshi",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-8",
+      "category": "software-engineering",
+      "name": "Himanshu",
+      "username": "@itshimanshu007",
+      "imageUrl": "https://static.topmate.io/iyxGxPvjXDn7KVxuEW2boz.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/itshimanshu007",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-9",
+      "category": "software-engineering",
+      "name": "Smile",
+      "username": "@smilegupta",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/eGEWuKXX3q9NEQMZNJTqt9.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/smilegupta",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-10",
+      "category": "software-engineering",
+      "name": "Arnabi",
+      "username": "@arnabi_mitra",
+      "imageUrl": "https://static.topmate.io/pEERReidPsA5xmoD4ktR7h.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/arnabi_mitra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "software-engineering-new-11",
+      "category": "software-engineering",
+      "name": "Bhavesh",
+      "username": "@bhavesh_vaswani",
+      "imageUrl": "https://static.topmate.io/bTEdtzEcuvVo5ZpKCK3DrD.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/bhavesh_vaswani",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "specialized-consulting": [
@@ -14082,6 +15150,30 @@ const industryUsers: Record<string, User[]> = {
       "rank": 23,
       "profileUrl": "https://topmate.io/kunalkishore",
       "bio": "Founder, InvestAid India",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "specialized-consulting-new-1",
+      "category": "specialized-consulting",
+      "name": "Shubham",
+      "username": "@akashubhambhardwaj",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/hNKLTKDwSHCDpCKjm39Q4D.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/akashubhambhardwaj",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "specialized-consulting-new-2",
+      "category": "specialized-consulting",
+      "name": "Henri",
+      "username": "@techtual_consulting",
+      "imageUrl": "https://static.topmate.io/oCbBfTHUBt8tBgQWvi27qb.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/techtual_consulting",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -14386,6 +15478,18 @@ const industryUsers: Record<string, User[]> = {
       "bio": "",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "specialized-services-new-1",
+      "category": "specialized-services",
+      "name": "Sunny",
+      "username": "@sunny_mishra",
+      "imageUrl": "https://topmate-staging.s3.amazonaws.com/89SjVnfxGiba8gDEs4BvVP.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sunny_mishra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "startups-entrepreneurship": [
@@ -14652,6 +15756,54 @@ const industryUsers: Record<string, User[]> = {
       "bio": "Early Stage VC investing in Pre-Seed & Seed | Now: Huddle Ventures |",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "startups-entrepreneurship-new-1",
+      "category": "startups-entrepreneurship",
+      "name": "Hashir",
+      "username": "@imhashir",
+      "imageUrl": "https://topmate-profile-pics.s3.ap-south-1.amazonaws.com/profile_pic_4525473f-8583-4333-b2d5-4caccd707948.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/imhashir",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "startups-entrepreneurship-new-2",
+      "category": "startups-entrepreneurship",
+      "name": "Rahul",
+      "username": "@rahul_manthra",
+      "imageUrl": "https://static.topmate.io/jCYby3LnU7MZ6PNv3PuGub.PNG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/rahul_manthra",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "startups-entrepreneurship-new-3",
+      "category": "startups-entrepreneurship",
+      "name": "Ako",
+      "username": "@ako",
+      "imageUrl": "https://topmate-staging.s3.ap-south-1.amazonaws.com/vxE3aYvNXubvdkNC8NcktV.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/ako",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "startups-entrepreneurship-new-4",
+      "category": "startups-entrepreneurship",
+      "name": "Prashant",
+      "username": "@prashantghadge",
+      "imageUrl": "https://static.topmate.io/4jRLLfACaror9qHYkwuLMN.png",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/prashantghadge",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ],
   "tech-careers-software": [
@@ -14880,6 +16032,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 19,
       "profileUrl": "https://topmate.io/rani_dhage",
       "bio": "Hi, I'm Rani Dhage a Software Engineer - Backend Developer. I craft efficient and scalable back-end systems, focusing on microservices, APIs, and high-performance applications. Let's build something great together!",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "tech-careers-software-new-1",
+      "category": "tech-careers-software",
+      "name": "Sharat",
+      "username": "@sharat_ganesh",
+      "imageUrl": "https://static.topmate.io/o4YEVYKkPaXTFQHzWi5jV5.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/sharat_ganesh",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
@@ -15340,6 +16504,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 14,
       "profileUrl": "https://topmate.io/prateek_singhal10",
       "bio": "Software Engineer - 2 at Amazon | Zero to Hero Software Engineer | Tier 3 College to Tier 1 Product Based Company | Cracked Interviews at Amazon, PhonePe, Blinkit, Swiggy, Zeta, TripAdvisor, Sharechat, CoinDCX, Spinny, Dunzo and many more",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "tech-learning-new-1",
+      "category": "tech-learning",
+      "name": "Joseph",
+      "username": "@friendlyhackerjoe",
+      "imageUrl": "https://static.topmate.io/pYjrgUwARQa9UKc8LJLFXV.JPG",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/friendlyhackerjoe",
+      "bio": "",
       "categoryMetric": "",
       "subtitle": ""
     }
