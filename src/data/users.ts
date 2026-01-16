@@ -8706,18 +8706,6 @@ const industryUsers: Record<string, User[]> = {
       "subtitle": ""
     },
     {
-      "id": "education-learning-8",
-      "category": "education-learning",
-      "name": "Shannon Fernandes",
-      "username": "@dionysy",
-      "imageUrl": "https://static.topmate.io/rMYRyh6whWLnDMJFbNoYFV.jpeg",
-      "rank": 8,
-      "profileUrl": "https://topmate.io/dionysy",
-      "bio": "Psychologist & Psychometrician | M.Sc. Psychology (IIPR'23), B.A. Psychology (SXC'21)",
-      "categoryMetric": "",
-      "subtitle": ""
-    },
-    {
       "id": "education-learning-9",
       "category": "education-learning",
       "name": "Anshika Jais",
@@ -13182,6 +13170,18 @@ const industryUsers: Record<string, User[]> = {
       "rank": 25,
       "profileUrl": "https://topmate.io/rosemol_thamby",
       "bio": "Psychologist, Trauma informed",
+      "categoryMetric": "",
+      "subtitle": ""
+    },
+    {
+      "id": "psychology-mental-health-26",
+      "category": "psychology-mental-health",
+      "name": "Shannon Fernandes",
+      "username": "@dionysy",
+      "imageUrl": "https://static.topmate.io/rMYRyh6whWLnDMJFbNoYFV.jpeg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/dionysy",
+      "bio": "Psychologist & Psychometrician | M.Sc. Psychology (IIPR'23), B.A. Psychology (SXC'21)",
       "categoryMetric": "",
       "subtitle": ""
     }
