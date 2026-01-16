@@ -17376,6 +17376,18 @@ const industryUsers: Record<string, User[]> = {
       "bio": "‚ÄúIf your ambition doesn't scare you, it's too small!‚Äù",
       "categoryMetric": "",
       "subtitle": ""
+    },
+    {
+      "id": "working-abroad-25",
+      "category": "working-abroad",
+      "name": "Mayuri Ashtputre",
+      "username": "@mayuri_ashtputre",
+      "imageUrl": "https://static.topmate.io/f1ZzVneBeGcEVv1DKTjvHb.jpg",
+      "rank": 25,
+      "profileUrl": "https://topmate.io/mayuri_ashtputre",
+      "bio": "",
+      "categoryMetric": "",
+      "subtitle": ""
     }
   ]
 };
