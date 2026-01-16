@@ -17116,11 +17116,11 @@ const industryUsers: Record<string, User[]> = {
     {
       "id": "working-abroad-3",
       "category": "working-abroad",
-      "name": "Binesh Kumar",
-      "username": "@binesh_kumar",
-      "imageUrl": "https://static.topmate.io/xfAvPkWsWv1jwnhv7TTYBJ.png",
+      "name": "Mayuri Ashtputre",
+      "username": "@mayuri_ashtputre",
+      "imageUrl": "https://static.topmate.io/f1ZzVneBeGcEVv1DKTjvHb.jpg",
       "rank": 3,
-      "profileUrl": "https://topmate.io/binesh_kumar",
+      "profileUrl": "https://topmate.io/mayuri_ashtputre",
       "bio": "",
       "categoryMetric": "",
       "subtitle": ""
@@ -17380,11 +17380,11 @@ const industryUsers: Record<string, User[]> = {
     {
       "id": "working-abroad-25",
       "category": "working-abroad",
-      "name": "Mayuri Ashtputre",
-      "username": "@mayuri_ashtputre",
-      "imageUrl": "https://static.topmate.io/f1ZzVneBeGcEVv1DKTjvHb.jpg",
+      "name": "Binesh Kumar",
+      "username": "@binesh_kumar",
+      "imageUrl": "https://static.topmate.io/xfAvPkWsWv1jwnhv7TTYBJ.png",
       "rank": 25,
-      "profileUrl": "https://topmate.io/mayuri_ashtputre",
+      "profileUrl": "https://topmate.io/binesh_kumar",
       "bio": "",
       "categoryMetric": "",
       "subtitle": ""
